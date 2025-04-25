@@ -1,0 +1,164 @@
+{
+  "en": {
+    "common": {
+      "contents": "Contents",
+      "download": "Download Dataset",
+      "accessButton": "Access VitalDB",
+      "registrationNote": "Registration required. Dataset is provided under CC BY-NC-SA 4.0 license.",
+      "viewAll": "View All"
+    },
+    "vitalDB": {
+      "title": "VitalDB Overview",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "paragraph1": "This is a comprehensive dataset of 6,388 surgical patients composed of intraoperative biosignals and clinical information. The biosignal data included in the dataset is high quality data such as 500 Hz waveform signals and numeric values at intervals of 1-7 seconds. More than 60 surgery related clinical information is also provided to help interpret the signals.",
+          "paragraph2": "The dataset is provided free of charge to help researchers who want to study and develop new medical AI algorithms using monitoring signals from surgical patients. We expect that the distribution of this world's largest biosignal dataset will greatly contribute to the advancement of medical AI research.",
+          "citation": "If you use the VitalDB open dataset in your research, please cite the following publication:",
+          "citationText": "Lee HC, Park Y, Yoon SB, Yang SM, Park D, Jung CW. VitalDB, a high-fidelity multi-parameter vital signs database in surgical patients. Sci Data. 2022 Jun 8;9(1):279. doi: 10.1038/s41597-022-01411-5. PMID: 35676300; PMCID: PMC9178032."
+        },
+        "datasetSummary": {
+          "title": "Dataset Summary",
+          "point1": "The data was obtained from non-cardiac (general, thoracic, urologic, and gynaecologic) surgery patients who underwent routine or emergency surgery in 10 out of 31 operating rooms of Seoul National University Hospital, Seoul, Republic of Korea.",
+          "point2": "The acquisition and release of the data was approved by the Institutional Review Board of Seoul National University Hospital (H-1408-101-605). The study was also registered at clinicaltrials.gov (NCT02914444).",
+          "point3": "Case files were recorded in the form of vital files using Vital Recorder version 1.7.4. Each case file contains high-resolution data with a time resolution of 500 Hz for wave data and 1-7 seconds for numeric data, with an average of 2.8 million data points per case.",
+          "point4": "The dataset consists of a total of 557,622 (average 87, range 16-136) data tracks from 6,388 cases. All data tracks in the vital file were extracted, converted to csv, and compressed with gzip.",
+          "tableSummary": "Dataset Summary",
+          "deviceTableTitle": "Device and data track description",
+          "demographic": "Demographic",
+          "surgicalApproach": "Surgical approach",
+          "device": "Device",
+          "deviceType": "Device type",
+          "company": "Company",
+          "parameters": "Parameters",
+          "dataType": "Data type",
+          "numberOfParameters": "Number of parameters",
+          "acquisitionInterval": "Acquisition interval (sec)"
+        },
+        "parameterList": {
+          "title": "Parameter List",
+          "clinicalInfo": {
+            "title": "Clinical Information",
+            "parameter": "Parameter",
+            "dataSource": "Data Source",
+            "description": "Description",
+            "unit": "Unit"
+          },
+          "hemodynamic": {
+            "title": "Hemodynamic Parameters",
+            "note": "* The parameter name is in the form of \"device name / data track name\". W=waveform; N=numeric; S=string",
+            "parameter": "Parameter",
+            "description": "Description",
+            "typeHz": "Type/Hz",
+            "unit": "Unit"
+          },
+          "labResults": {
+            "title": "Lab Results",
+            "parameter": "Parameter",
+            "dataSource": "Data Source",
+            "category": "Category",
+            "description": "Description",
+            "unit": "Unit",
+            "refValue": "Reference value"
+          }
+        },
+        "dataUseAgreement": {
+          "title": "Data Use Agreement",
+          "objective": "1. Objective",
+          "objectiveText": "This Agreement is made in accordance with Article 18 (2) 4 of the Personal Information Protection Act and Article 16 (3) of the Bioethics Act of Korea, and the Health Insurance Portability and Accountability Act of 1996 (HIPPA) Regulation 45 CFR Part 160 and Part 164. This agreement is intended to specify the details necessary to allow the access of data users (hereinafter referred to as the \"User\") to the limited data set (hereinafter referred to as the \"Data\") provided by the VitalDB team (hereinafter referred to as the \"Provider\").",
+          "terms": "2. Terms",
+          "termsText": "Unless otherwise specified, the definition of terms used in this Agreement shall be governed by the Personal Information Protection Law of the Republic of Korea and the United States HIPPA regulations.",
+          "license": "3. License",
+          "licenseText": "Users are permitted to use dataset from the Provider website subject to our terms of use. The dataset will be released to Users under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. This license type has been applied to the VitalDB Open Dataset in order to maximize the dissemination and use of the Data.",
+          "readFullAgreement": "Read Full Agreement"
+        },
+        "acknowledgement": {
+          "title": "Acknowledgement",
+          "paragraph1": "Our project is currently supported by the Korea Medical Device Development Fund grant funded by the Korea government (the Ministry of Science and ICT, the Ministry of Trade, Industry and Energy, the Ministry of Health & Welfare, Republic of Korea, the Ministry of Food and Drug Safety) (Project Number: KMDF_PR_20200901_0144, 9991006817); MSIT (Ministry of Science and ICT), Korea, under the ITRC (Information Technology Research Center) support program (IITP-2018-2018-0-01833); and National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (NRF-2018R1A5A1060031).",
+          "paragraph2": "The project was previously supported by the National Research Foundation of Korea (NRF) grant funded by the Korean government (MEST) (NRF-2015R1A2A2A01003962)."
+        }
+      }
+    }
+  },
+  "ko": {
+    "common": {
+      "contents": "목차",
+      "download": "데이터셋 다운로드",
+      "accessButton": "VitalDB 접속하기",
+      "registrationNote": "등록 필요. 데이터셋은 CC BY-NC-SA 4.0 라이센스로 제공됩니다.",
+      "viewAll": "전체 보기"
+    },
+    "vitalDB": {
+      "title": "VitalDB 개요",
+      "sections": {
+        "introduction": {
+          "title": "소개",
+          "paragraph1": "이 데이터셋은 6,388명의 수술 환자의 수술 중 생체신호 및 임상 정보로 구성된 종합적인 데이터셋입니다. 데이터셋에 포함된 생체신호 데이터는 500Hz 파형 신호 및 1-7초 간격의 수치값과 같은 고품질 데이터입니다. 신호 해석에 도움이 되는 60개 이상의 수술 관련 임상 정보도 제공됩니다.",
+          "paragraph2": "이 데이터셋은 수술 환자의 모니터링 신호를 사용하여 새로운 의료 AI 알고리즘을 연구하고 개발하고자 하는 연구자들을 돕기 위해 무료로 제공됩니다. 세계 최대 규모의 생체신호 데이터셋 배포가 의료 AI 연구 발전에 크게 기여할 것으로 기대합니다.",
+          "citation": "연구에 VitalDB 오픈 데이터셋을 사용하는 경우 다음 출판물을 인용해 주세요:",
+          "citationText": "이현철, 박용건, 윤소벌, 양세진, 박대부, 정철우. VitalDB, 수술 환자의 고품질 다중 파라미터 생체 신호 데이터베이스. Sci Data. 2022년 6월 8일; 9(1):279. doi: 10.1038/s41597-022-01411-5. PMID: 35676300; PMCID: PMC9178032."
+        },
+        "datasetSummary": {
+          "title": "데이터셋 요약",
+          "point1": "이 데이터는 대한민국 서울 서울대학교병원의 31개 수술실 중 10개에서 일반 또는 응급 수술을 받은 비심장 수술(일반, 흉부, 비뇨기, 부인과) 환자로부터 수집되었습니다.",
+          "point2": "데이터의 획득 및 공개는 서울대학교병원 기관윤리심의위원회(H-1408-101-605)의 승인을 받았습니다. 이 연구는 또한 clinicaltrials.gov(NCT02914444)에 등록되었습니다.",
+          "point3": "케이스 파일은 Vital Recorder 버전 1.7.4를 사용하여 바이탈 파일 형태로 기록되었습니다. 각 케이스 파일에는 파형 데이터의 경우 500Hz, 숫자 데이터의 경우 1-7초의 시간 해상도를 가진 고해상도 데이터가 포함되어 있으며, 케이스당 평균 280만 개의 데이터 포인트가 있습니다.",
+          "point4": "데이터셋은 6,388개의 케이스에서 총 557,622개(평균 87개, 범위 16-136개)의 데이터 트랙으로 구성됩니다. 바이탈 파일의 모든 데이터 트랙은 추출되어 csv로 변환되고 gzip으로 압축되었습니다.",
+          "tableSummary": "데이터셋 요약",
+          "deviceTableTitle": "장치 및 데이터 트랙 설명",
+          "demographic": "인구 통계",
+          "surgicalApproach": "수술 접근법",
+          "device": "장치",
+          "deviceType": "장치 유형",
+          "company": "회사",
+          "parameters": "파라미터",
+          "dataType": "데이터 유형",
+          "numberOfParameters": "파라미터 수",
+          "acquisitionInterval": "획득 간격(초)"
+        },
+        "parameterList": {
+          "title": "파라미터 목록",
+          "clinicalInfo": {
+            "title": "임상 정보",
+            "parameter": "파라미터",
+            "dataSource": "데이터 소스",
+            "description": "설명",
+            "unit": "단위"
+          },
+          "hemodynamic": {
+            "title": "혈역학적 파라미터",
+            "note": "* 파라미터 이름은 \"장치 이름/데이터 트랙 이름\" 형식입니다. W=파형; N=숫자; S=문자열",
+            "parameter": "파라미터",
+            "description": "설명",
+            "typeHz": "유형/Hz",
+            "unit": "단위"
+          },
+          "labResults": {
+            "title": "검사 결과",
+            "parameter": "파라미터",
+            "dataSource": "데이터 소스",
+            "category": "카테고리",
+            "description": "설명",
+            "unit": "단위",
+            "refValue": "참조값"
+          }
+        },
+        "dataUseAgreement": {
+          "title": "데이터 사용 동의서",
+          "objective": "1. 목적",
+          "objectiveText": "본 계약(이하 \"계약\")은 대한민국 개인정보보호법 제18조 (2) 4항 및 생명윤리법 제16조 (3)항, 그리고 미국 건강보험 이전 및 책임에 관한 법(HIPPA) 규정 45 CFR Part 160 및 Part 164에 따라 작성되었습니다. 이 계약은 VitalDB 팀(이하 \"제공자\")가 제공하는 제한된 데이터 세트(이하 \"데이터\")에 데이터 사용자(이하 \"사용자\")가 접근할 수 있도록 하는 데 필요한 세부 사항을 명시하기 위한 것입니다.",
+          "terms": "2. 용어",
+          "termsText": "달리 명시되지 않는 한, 이 계약에서 사용되는 용어의 정의는 대한민국 개인정보보호법 및 미국 HIPPA 규정에 의해 규제됩니다.",
+          "license": "3. 라이센스",
+          "licenseText": "사용자는 당사의 이용 약관에 따라 제공자 웹사이트에서 데이터셋을 사용할 수 있습니다. 데이터셋은 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 (CC BY-NC-SA 4.0) 라이센스에 따라 사용자에게 제공됩니다. 이 라이센스 유형은 데이터의 보급 및 사용을 최대화하기 위해 VitalDB 오픈 데이터셋에 적용되었습니다.",
+          "readFullAgreement": "전체 계약 읽기"
+        },
+        "acknowledgement": {
+          "title": "감사의 글",
+          "paragraph1": "현재 우리 프로젝트는 한국 정부(과학기술정보통신부, 산업통상자원부, 보건복지부, 식품의약품안전처)가 지원하는 한국 의료기기 개발 기금 지원금(프로젝트 번호: KMDF_PR_20200901_0144, 9991006817); 과학기술정보통신부의 ITRC(정보기술연구센터) 지원 프로그램(IITP-2018-2018-0-01833); 그리고 한국 정부(과학기술정보통신부)가 지원하는 한국연구재단(NRF) 지원금(NRF-2018R1A5A1060031)으로 지원받고 있습니다.",
+          "paragraph2": "이 프로젝트는 이전에 한국 정부(교육과학기술부)가 지원하는 한국연구재단(NRF) 지원금(NRF-2015R1A2A2A01003962)으로 지원받았습니다."
+        }
+      }
+    }
+  }
+}
