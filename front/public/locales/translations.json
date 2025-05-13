@@ -5,7 +5,261 @@
       "download": "Download Dataset",
       "accessButton": "Access VitalDB",
       "registrationNote": "Registration required. Dataset is provided under CC BY-NC-SA 4.0 license.",
-      "viewAll": "View All"
+      "viewAll": "View All",
+      "loading": "Loading...",
+      "vitalRecorder": "VitalRecorder",
+      "webMonitoring": "Web Monitoring",
+      "openDataset": "Open Dataset",
+      "docs": "Docs",
+      "forum": "Forum",
+      "login": "Login",
+      "dismiss": "Dismiss",
+      "notification": "Notification",
+      "dropFilesHere": "Drop files here or click to browse",
+      "browseFiles": "Browse Files",
+      "and": "and"
+    },
+    "home": {
+      "hero": {
+        "title": "Comprehensive Vital Signs Platform for Medical Research",
+        "description": "Explore our extensive vital signs dataset with high-resolution waveform data from thousands of surgical patients. Accelerate your medical AI research with quality medical data.",
+        "exploreDatasetBtn": "Explore VitalDB",
+        "vitalRecorderBtn": "Download VitalRecorder",
+        "tagline": "Medical Data Research Group",
+        "institution": "VitalLab @ SNUCM/SNUH"
+      },
+      "featuredContent": "Featured Content",
+      "featuredContentDesc": "Explore our latest tools, updates, and community discussions to stay informed about VitalLab developments.",
+      "notice": {
+        "title": "Notice",
+        "viewMore": "View More"
+      },
+      "discussion": {
+        "title": "Discussion",
+        "viewMore": "View More"
+      },
+      "stats": {
+        "title": "VitalDB Platform",
+        "description": "VitalDB is the world's largest biosignal dataset and utilization platform, aiding medical research and healthcare optimization.",
+        "verified": "Verified Data",
+        "activity": "Biosignal Activity"
+      },
+      "vitalRecorder": {
+        "title": "VitalRecorder",
+        "description": "Vital Recorder is a free vital sign recording program for research purposes. It receives and records various patient monitor data through direct connection to the patient monitor.",
+        "downloadButton": "Download",
+        "learnMore": "Learn More"
+      },
+      "toolsSection": {
+        "title": "Our Tools & Services",
+        "description": "Explore our comprehensive suite of tools and services designed to help researchers and clinicians work with vital signs data efficiently."
+      },
+      "resources": "Resources",
+      "solutions": "Solutions",
+      "feature": {
+        "dataset": "Largest Biosignal Dataset",
+        "visualization": "Visualization",
+        "realtime": "Real-time",
+        "api": "API Access",
+        "ai": "Medical AI Research",
+        "recorder": "VitalRecorder",
+        "research": "Clinical Research"
+      },
+      "cta": {
+        "title": "Ready to Accelerate Your Medical Research?",
+        "description": "Join thousands of researchers worldwide who are using VitalLab to advance their medical research and AI development projects.",
+        "registerBtn": "Create Account",
+        "docsBtn": "Documentation"
+      },
+      "keyFeatures": "Research & Technology Innovation",
+      "research": {
+        "highlights": "Research Highlights",
+        "bisModel": "Predictive BIS Model",
+        "bisModelDesc": "Predictive model for the bispectral index during target-controlled infusion of propofol and remifentanil",
+        "perioperative": "Perioperative Data Collection",
+        "perioperativeDesc": "Collection and analysis of perioperative biosignal data for healthcare optimization",
+        "contact": "Contact for Inquiries",
+        "contactInfo": "Email: vital@snu.ac.kr, Department of Anesthesiology and Pain Medicine, SNUCM/SNUH",
+        "directors": "Under the direction of",
+        "professor1": "Prof. Chul-Woo Jung",
+        "professor2": "Prof. Hyung-Chul Lee",
+        "institution": "at Seoul National University College of Medicine"
+      },
+      "testimonials": "User Reviews",
+      "testimonialsTitle": "Researchers' Experiences",
+      "testimonialsDesc": "Check out real experiences from medical researchers using VitalLab.",
+      "viewMoreTestimonials": "View More Reviews",
+      "partners": "Partners & Collaborators",
+      "partnersTitle": "Working with Medical Institutions Worldwide",
+      "partnersDesc": "VitalLab collaborates with world-class medical institutions, universities, and research centers to advance medical data science.",
+      "becomePartner": "Want to become a partner?",
+      "becomePartnerDesc": "If you're interested in research collaboration, data sharing, or joint projects with VitalLab, please contact us.",
+      "contactUs": "Contact Us",
+      "research": "Research Achievements",
+      "researchTitle": "Latest Research Using VitalLab",
+      "researchDesc": "Discover the latest research achievements by researchers worldwide using VitalLab data and tools.",
+      "researchStats": "VitalLab Data Research Status",
+      "viewAllResearch": "View All Research Achievements",
+      "readMore": "View Paper",
+      "webApi": {
+        "title": "REST",
+        "subtitle": "Web API",
+        "tag": "HTTP/HTTPS",
+        "description": "Access VitalDB data programmatically through our RESTful API. Retrieve vital signs, patient data, and more with simple HTTP requests.",
+        "example": "GET /api/v1/cases/123/vitals?params=HR,SBP,DBP\nAccept: application/json\nAuthorization: Bearer YOUR_API_KEY",
+        "docsButton": "API Documentation",
+        "learnMore": "Learn More",
+        "version": "Version: v1.0",
+        "rateLimit": "Rate Limit: 1000 requests/day"
+      },
+      "pythonLibrary": {
+        "title": "PyPI",
+        "subtitle": "Python Library",
+        "tag": "Data Science Ready",
+        "description": "Our Python library provides a seamless interface to VitalDB data, with built-in support for data analysis and visualization tools.",
+        "example": "pip install vitalab\n\nimport vitalab\n\n# Load case data\ncase = vitalab.load_case(123)\nvitals = case.get_vitals(['HR', 'SBP', 'DBP'])",
+        "installButton": "Install Package",
+        "learnMore": "Learn More",
+        "version": "Version: 2.1.3",
+        "compatibility": "Pandas & NumPy Compatible"
+      },
+      "dataViewer": {
+        "title": "Interactive",
+        "subtitle": "Data Viewer",
+        "tag": "Real-time Analysis",
+        "description": "Visualize and analyze VitalDB data with our interactive web-based data viewer. Create custom visualizations and export results.",
+        "features": "Supported Charts\nLine, Area, Scatter, Box plots\nData Export\nCSV, JSON, Excel",
+        "demoButton": "Try Demo",
+        "learnMore": "Learn More",
+        "platform": "Web & Desktop",
+        "tools": "Annotation Tools Available"
+      },
+      "researchPapers": {
+        "anesthesia": "Hypotension Prediction During Anesthesia",
+        "icu": "Machine Learning for ICU Mortality Prediction",
+        "waveform": "Analysis of High-Resolution Arterial Waveforms",
+        "journal": "Journal",
+        "year": "Year",
+        "vitaldb": "VitalDB, a high-fidelity multi-parameter vital signs database in surgical patients",
+        "deeplearning": "Deep‐learning model associating lateral cervical radiographic features with Cormack–Lehane grade 3 or 4 glottic view",
+        "vitalrecorder": "Vital Recorder-a free research tool for automatic recording of high-resolution time-synchronised physiological data",
+        "tags": {
+          "ai": "AI",
+          "prediction": "Prediction Model",
+          "anesthesia": "Anesthesia",
+          "icu": "ICU",
+          "ml": "Machine Learning",
+          "mortality": "Mortality",
+          "waveform": "Waveform Analysis",
+          "hemodynamics": "Hemodynamics",
+          "dataset": "Dataset",
+          "vitalsigns": "Vital Signs",
+          "deeplearning": "Deep Learning",
+          "radiography": "Radiography",
+          "vitalrecorder": "VitalRecorder",
+          "physiological": "Physiological Data"
+        }
+      },
+      "researchStats": {
+        "papers": "Research Papers",
+        "institutions": "Medical Schools",
+        "countries": "Countries",
+        "trials": "Clinical Trials"
+      },
+      "testimonialUsers": {
+        "user1": {
+          "name": "Dr. Ji-Hun Kim",
+          "role": "Dept of Anesthesiology, Seoul National University",
+          "content": "VitalLab's dataset was essential for our research team's AI model development. The high-resolution waveform data significantly improved our accuracy in predicting complications during anesthesia."
+        },
+        "user2": {
+          "name": "Sarah Johnson, MD",
+          "role": "Cardiovascular Researcher",
+          "content": "The VitalRecorder has revolutionized how we collect data in our clinical studies. The real-time visualization and API access saves us countless hours in data processing."
+        },
+        "user3": {
+          "name": "Sung-Min Lee",
+          "role": "CTO, Medical AI Startup",
+          "content": "The ease of use of the Python library is amazing. Being able to handle everything from data preprocessing to analysis in one stop has greatly improved our development speed."
+        }
+      }
+    },
+    "stats": {
+      "researchers": "Researchers",
+      "monitoringBeds": "Active monitoring beds",
+      "totalCases": "Total cases"
+    },
+    "footer": {
+      "resources": "Resources",
+      "community": "Community",
+      "legal": "Legal",
+      "openDataset": "Open Dataset",
+      "vitalRecorder": "VitalRecorder",
+      "webMonitoring": "Web Monitoring",
+      "documentation": "Documentation",
+      "forum": "Forum",
+      "github": "GitHub",
+      "contactUs": "Contact Us",
+      "research": "Research",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "license": "License",
+      "citations": "Citations",
+      "description": "A comprehensive platform for vital signs data collection, analysis, and research in healthcare.",
+      "madeWith": "Made with",
+      "forResearchers": "for researchers worldwide",
+      "language": "Language"
+    },
+    "docs": {
+      "title": "Documentation",
+      "subtitle": "Find user guides, developer guides, API references, tutorials, and more",
+      "generalInfo": "General Information",
+      "generalInfoDesc": "Learn about VitalDB, publications, and terms of service",
+      "vitalRecorder": "VitalRecorder",
+      "vitalRecorderDesc": "User manuals and guides for the Vital Recorder software",
+      "webMonitoring": "Web Monitoring",
+      "webMonitoringDesc": "How to use the web monitoring features of VitalDB",
+      "myFiles": "My Files",
+      "myFilesDesc": "Managing and downloading your files from VitalDB",
+      "openDataset": "Open Dataset",
+      "openDatasetDesc": "Overview of the VitalDB open dataset",
+      "api": "API",
+      "apiDesc": "API documentation for programmatic access to VitalDB",
+      "vitalserver": "Vitalserver",
+      "vitalserverDesc": "Setup and usage guides for the on-premise Vitalserver",
+      "needHelp": "Need More Help?",
+      "needHelpDesc": "Can't find what you're looking for? Contact our support team for additional assistance.",
+      "contactSupport": "Contact Support",
+      "tableOfContents": "Table of Contents",
+      "overview": "Overview",
+      "features": "Features",
+      "interface": "User Interface",
+      "tutorials": "Tutorials",
+      "installation": "Installation",
+      "usage": "Usage Guide",
+      "apiReference": "API Reference"
+    },
+    "forum": {
+      "title": "Discussion Forum",
+      "description": "Join the conversation with researchers and healthcare professionals from around the world. Share your insights, ask questions, and collaborate on vital signs data analysis.",
+      "latestPosts": "Latest Posts",
+      "totalPosts": "Total: {{count}} posts",
+      "categories": {
+        "all": "All Posts",
+        "question": "Question",
+        "discussion": "Discussion",
+        "notice": "Notice"
+      },
+      "category": "Category",
+      "table": {
+        "category": "Category",
+        "title": "Title",
+        "author": "Author",
+        "views": "Views",
+        "date": "Date"
+      },
+      "noPosts": "No posts found.",
+      "createPost": "Create Post"
     },
     "vitalDB": {
       "title": "VitalDB Overview",
@@ -38,45 +292,202 @@
         "parameterList": {
           "title": "Parameter List",
           "clinicalInfo": {
-            "title": "Clinical Information",
-            "parameter": "Parameter",
-            "dataSource": "Data Source",
-            "description": "Description",
-            "unit": "Unit"
+            "title": "Clinical Information"
           },
           "hemodynamic": {
-            "title": "Hemodynamic Parameters",
-            "note": "* The parameter name is in the form of \"device name / data track name\". W=waveform; N=numeric; S=string",
-            "parameter": "Parameter",
-            "description": "Description",
-            "typeHz": "Type/Hz",
-            "unit": "Unit"
+            "title": "Hemodynamic Parameters"
           },
           "labResults": {
-            "title": "Lab Results",
-            "parameter": "Parameter",
-            "dataSource": "Data Source",
-            "category": "Category",
-            "description": "Description",
-            "unit": "Unit",
-            "refValue": "Reference value"
+            "title": "Lab Results"
           }
         },
         "dataUseAgreement": {
-          "title": "Data Use Agreement",
-          "objective": "1. Objective",
-          "objectiveText": "This Agreement is made in accordance with Article 18 (2) 4 of the Personal Information Protection Act and Article 16 (3) of the Bioethics Act of Korea, and the Health Insurance Portability and Accountability Act of 1996 (HIPPA) Regulation 45 CFR Part 160 and Part 164. This agreement is intended to specify the details necessary to allow the access of data users (hereinafter referred to as the \"User\") to the limited data set (hereinafter referred to as the \"Data\") provided by the VitalDB team (hereinafter referred to as the \"Provider\").",
-          "terms": "2. Terms",
-          "termsText": "Unless otherwise specified, the definition of terms used in this Agreement shall be governed by the Personal Information Protection Law of the Republic of Korea and the United States HIPPA regulations.",
-          "license": "3. License",
-          "licenseText": "Users are permitted to use dataset from the Provider website subject to our terms of use. The dataset will be released to Users under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. This license type has been applied to the VitalDB Open Dataset in order to maximize the dissemination and use of the Data.",
-          "readFullAgreement": "Read Full Agreement"
+          "title": "Data Use Agreement"
         },
         "acknowledgement": {
-          "title": "Acknowledgement",
-          "paragraph1": "Our project is currently supported by the Korea Medical Device Development Fund grant funded by the Korea government (the Ministry of Science and ICT, the Ministry of Trade, Industry and Energy, the Ministry of Health & Welfare, Republic of Korea, the Ministry of Food and Drug Safety) (Project Number: KMDF_PR_20200901_0144, 9991006817); MSIT (Ministry of Science and ICT), Korea, under the ITRC (Information Technology Research Center) support program (IITP-2018-2018-0-01833); and National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (NRF-2018R1A5A1060031).",
-          "paragraph2": "The project was previously supported by the National Research Foundation of Korea (NRF) grant funded by the Korean government (MEST) (NRF-2015R1A2A2A01003962)."
+          "title": "Acknowledgement"
+        },
+        "webApi": {
+          "title": "Web API",
+          "introduction": "Introduction",
+          "apiKey": "Getting an API Key",
+          "endpoints": "API Endpoints",
+          "responseFormats": "Response Formats",
+          "rateLimits": "Rate Limits",
+          "clientLibraries": "Client Libraries"
+        },
+        "pythonLibrary": {
+          "title": "Python Library",
+          "introduction": "Introduction",
+          "installation": "Installation",
+          "quickStart": "Quick Start",
+          "keyFeatures": "Key Features",
+          "dataClasses": "Data Classes",
+          "advancedExample": "Advanced Example"
+        },
+        "dataViewer": {
+          "title": "Data Viewer",
+          "introduction": "Introduction",
+          "description": "Access and visualize VitalDB data through our interactive data viewer. Explore vital signs data with real-time visualizations and analytics.",
+          "gettingStarted": "Getting Started",
+          "dataVisualization": "Data Visualization",
+          "features": {
+            "interactiveCharts": {
+              "title": "Interactive Charts",
+              "description": "Create custom visualizations with patient vital signs data"
+            },
+            "advancedFiltering": {
+              "title": "Advanced Filtering",
+              "description": "Find specific datasets with powerful search capabilities"
+            },
+            "dataExport": {
+              "title": "Data Export",
+              "description": "Export visualizations and raw data in multiple formats"
+            }
+          },
+          "instructions": {
+            "accessDataViewer": "Access the data viewer",
+            "accessDataViewerDesc": "Navigate to the VitalDB Data Viewer section from your account dashboard",
+            "selectPatientData": "Select patient data",
+            "selectPatientDataDesc": "Browse available datasets or search for specific cases",
+            "customizeVisualization": "Customize your visualization",
+            "customizeVisualizationDesc": "Select parameters, time ranges, and chart types",
+            "analyzeResults": "Analyze the results",
+            "analyzeResultsDesc": "Use built-in tools for statistics and waveform analysis"
+          },
+          "readDocumentation": "Read Full Documentation",
+          "exampleVisualizations": "Example Visualizations",
+          "bpTrends": {
+            "title": "Blood Pressure Trends",
+            "description": "Visualization of systolic and diastolic blood pressure over time during surgery"
+          },
+          "ecgWaveform": {
+            "title": "ECG Waveform Analysis",
+            "description": "Detailed ECG signal waveform visualization with beat detection"
+          }
         }
+      }
+    },
+    "admin": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "content": "Content",
+      "datasets": "Datasets",
+      "reports": "Reports",
+      "alerts": "Alerts",
+      "settings": "Settings",
+      "logout": "Logout",
+      "overview": "Overview",
+      "newUsers": "New Users",
+      "activeUsers": "Active Users",
+      "totalDatasets": "Total Datasets",
+      "storage": "Storage Used",
+      "recentActivity": "Recent Activity",
+      "quickActions": "Quick Actions",
+      "addUser": "Add User",
+      "editUser": "Edit User",
+      "deleteUser": "Delete User",
+      "approveUser": "Approve User",
+      "addContent": "Add Content",
+      "uploadDataset": "Upload Dataset",
+      "generateReport": "Generate Report",
+      "systemStatus": "System Status",
+      "pendingApprovals": "Pending Approvals",
+      "statistics": "Statistics",
+      "userManagement": "User Management",
+      "contentManagement": "Content Management",
+      "datasetManagement": "Dataset Management",
+      "viewDetails": "View Details",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "pending": "Pending",
+        "blocked": "Blocked"
+      },
+      "role": {
+        "admin": "Administrator",
+        "user": "User",
+        "moderator": "Moderator",
+        "researcher": "Researcher"
+      }
+    },
+    "auth": {
+      "welcome": "Welcome to the Medical Data Platform",
+      "description": "Securely store and utilize your data in our industry-leading medical data management and analytics platform.",
+      "login": {
+        "title": "Login",
+        "noAccount": "Don't have an account?",
+        "register": "Sign Up",
+        "email": "Email",
+        "password": "Password",
+        "forgotPassword": "Forgot Password?",
+        "rememberMe": "Remember me",
+        "signIn": "Sign In",
+        "loggingIn": "Signing in...",
+        "orContinueWith": "or",
+        "error": {
+          "invalidCredentials": "Invalid email or password",
+          "requiredFields": "Please enter your email and password",
+          "loginFailed": "Login failed. Please try again."
+        }
+      },
+      "register": {
+        "title": "Sign Up",
+        "haveAccount": "Already have an account?",
+        "login": "Sign In",
+        "name": "Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "agreeTerms": "I agree to the Terms of Service and Privacy Policy",
+        "createAccount": "Create Account",
+        "creatingAccount": "Creating account...",
+        "orContinueWith": "or",
+        "passwordStrength": {
+          "none": "Enter password",
+          "weak": "Weak",
+          "fair": "Fair",
+          "good": "Good",
+          "strong": "Strong"
+        },
+        "passwordRequirements": {
+          "length": "8+ characters",
+          "uppercase": "1 uppercase letter",
+          "number": "1 number",
+          "special": "1 special character"
+        },
+        "error": {
+          "passwordMismatch": "Passwords do not match",
+          "weakPassword": "Password must be stronger",
+          "requiredFields": "Please fill in all fields",
+          "termsRequired": "You must agree to the Terms of Service and Privacy Policy",
+          "registrationFailed": "Registration failed. Please try again."
+        }
+      }
+    },
+    "publications": {
+      "title": "Publications",
+      "subtitle": "Research Papers & Academic Achievements",
+      "description": "Explore the latest research papers and academic achievements by researchers using VitalLab tools and datasets.",
+      "featuredArticles": "Featured Articles",
+      "selectedPublications": "Selected Publications",
+      "byYear": "Publications by Year",
+      "viewPaper": "View Paper",
+      "author": "Authors",
+      "journal": "Journal",
+      "year": "Year",
+      "doi": "DOI",
+      "citation": "Citation",
+      "abstract": "Abstract",
+      "fullPublications": "Full publications can be found at Google Scholar",
+      "categories": {
+        "all": "All Publications",
+        "2023": "2023",
+        "2022": "2022",
+        "2021": "2021",
+        "2020": "2020",
+        "older": "2019 and earlier"
       }
     }
   },
@@ -84,9 +495,263 @@
     "common": {
       "contents": "목차",
       "download": "데이터셋 다운로드",
-      "accessButton": "VitalDB 접속하기",
-      "registrationNote": "등록 필요. 데이터셋은 CC BY-NC-SA 4.0 라이센스로 제공됩니다.",
-      "viewAll": "전체 보기"
+      "accessButton": "VitalDB 접속",
+      "registrationNote": "등록이 필요합니다. 데이터셋은 CC BY-NC-SA 4.0 라이센스로 제공됩니다.",
+      "viewAll": "전체 보기",
+      "loading": "로딩 중...",
+      "vitalRecorder": "바이탈레코더",
+      "webMonitoring": "웹 모니터링",
+      "openDataset": "오픈 데이터셋",
+      "docs": "문서",
+      "forum": "포럼",
+      "login": "로그인",
+      "dismiss": "닫기",
+      "notification": "알림",
+      "dropFilesHere": "파일을 여기에 드롭하거나 클릭하여 찾기",
+      "browseFiles": "파일 찾기",
+      "and": "및"
+    },
+    "home": {
+      "hero": {
+        "title": "세계 최대 규모의 생체 신호 데이터셋 및 활용 플랫폼",
+        "description": "서울대학교병원 연구진이 개발한 VitalDB와 VitalRecorder를 통해 세계 최대 규모의 주술기 생체신호 데이터셋을 기반으로 임상 연구와 AI 연구를 선도하고 있습니다.",
+        "exploreDatasetBtn": "VitalDB 탐색",
+        "vitalRecorderBtn": "VitalRecorder 다운로드",
+        "tagline": "의료 데이터 연구 그룹",
+        "institution": "VitalLab @ 서울대학교 의과대학/서울대학교병원"
+      },
+      "featuredContent": "주요 콘텐츠",
+      "featuredContentDesc": "최신 도구, 업데이트 및 커뮤니티 토론을 통해 VitalLab 개발 현황에 대한 정보를 확인하세요.",
+      "notice": {
+        "title": "공지사항",
+        "viewMore": "더 보기"
+      },
+      "discussion": {
+        "title": "토론",
+        "viewMore": "더 보기"
+      },
+      "stats": {
+        "title": "VitalDB 플랫폼",
+        "description": "VitalDB는 세계 최대 규모의 생체신호 데이터셋 및 활용 플랫폼으로, 의학 연구 및 의료 최적화를 지원합니다.",
+        "verified": "검증된 데이터",
+        "activity": "생체신호 활동"
+      },
+      "vitalRecorder": {
+        "title": "바이탈레코더",
+        "description": "Vital Recorder는 연구 목적의 무료 생체신호 기록 프로그램입니다. 환자 모니터에 직접 연결하여 다양한 환자 모니터 데이터를 수신하고 기록합니다.",
+        "downloadButton": "다운로드",
+        "learnMore": "자세히 알아보기"
+      },
+      "toolsSection": {
+        "title": "도구 및 서비스",
+        "description": "연구자와 임상의가 생체신호 데이터를 효율적으로 활용할 수 있도록 설계된 종합적인 도구와 서비스를 탐색하세요."
+      },
+      "resources": "리소스",
+      "solutions": "솔루션",
+      "feature": {
+        "dataset": "대규모 생체신호 데이터셋",
+        "visualization": "시각화",
+        "realtime": "실시간",
+        "api": "API 접근",
+        "ai": "의료 AI 연구",
+        "recorder": "VitalRecorder",
+        "research": "임상 연구"
+      },
+      "cta": {
+        "title": "의학 연구를 가속화할 준비가 되셨나요?",
+        "description": "전 세계 수천 명의 연구자들과 함께 VitalLab을 사용하여 의학 연구 및 AI 개발 프로젝트를 발전시키세요.",
+        "registerBtn": "계정 만들기",
+        "docsBtn": "문서 보기"
+      },
+      "keyFeatures": "연구 및 기술 혁신",
+      "research": {
+        "highlights": "연구 하이라이트",
+        "bisModel": "BIS 예측 모델",
+        "bisModelDesc": "프로포폴 및 레미펜타닐의 목표 농도 조절 주입 중 이중 스펙트럼 지수(BIS)의 예측 모델",
+        "perioperative": "주술기 데이터 수집",
+        "perioperativeDesc": "의료 최적화를 위한 주술기 생체신호 데이터 수집 및 분석",
+        "contact": "문의 연락처",
+        "contactInfo": "이메일: vital@snu.ac.kr, 서울대학교병원 마취통증의학과",
+        "directors": "연구책임자",
+        "professor1": "정철우 교수",
+        "professor2": "이형철 교수",
+        "institution": "서울대학교 의과대학"
+      },
+      "testimonials": "사용자 리뷰",
+      "testimonialsTitle": "연구자들의 실제 경험담",
+      "testimonialsDesc": "VitalLab을 사용하는 의료 연구자들의 실제 의견을 확인해보세요.",
+      "viewMoreTestimonials": "더 많은 리뷰 보기",
+      "partners": "파트너 & 협력기관",
+      "partnersTitle": "전 세계 의료 기관과 함께합니다",
+      "partnersDesc": "VitalLab은 세계적인 의료 기관, 대학, 연구소와 협력하여 의료 데이터 과학을 발전시키고 있습니다.",
+      "becomePartner": "파트너가 되고 싶으신가요?",
+      "becomePartnerDesc": "연구 협력, 데이터 공유, 공동 프로젝트 등 VitalLab과 함께하고 싶으시다면 연락주세요.",
+      "contactUs": "문의하기",
+      "research": "연구 성과",
+      "researchTitle": "VitalLab을 활용한 최신 연구",
+      "researchDesc": "전 세계 연구자들이 VitalLab 데이터와 도구를 활용해 발표한 최신 연구 성과를 확인하세요.",
+      "researchStats": "VitalLab 데이터 활용 연구 현황",
+      "viewAllResearch": "모든 연구 성과 보기",
+      "readMore": "논문 보기",
+      "webApi": {
+        "title": "REST",
+        "subtitle": "웹 API",
+        "tag": "HTTP/HTTPS",
+        "description": "RESTful API를 통해 프로그래밍 방식으로 VitalDB 데이터에 접근하세요. 간단한 HTTP 요청으로 생체 신호, 환자 데이터 등을 검색할 수 있습니다.",
+        "example": "GET /api/v1/cases/123/vitals?params=HR,SBP,DBP\nAccept: application/json\nAuthorization: Bearer YOUR_API_KEY",
+        "docsButton": "API 문서",
+        "learnMore": "더 알아보기",
+        "version": "버전: v1.0",
+        "rateLimit": "요청 제한: 1000건/일"
+      },
+      "pythonLibrary": {
+        "title": "PyPI",
+        "subtitle": "파이썬 라이브러리",
+        "tag": "데이터 과학 지원",
+        "description": "저희 파이썬 라이브러리는 VitalDB 데이터에 대한 원활한 인터페이스를 제공하며, 데이터 분석 및 시각화 도구를 기본 지원합니다.",
+        "example": "pip install vitalab\n\nimport vitalab\n\n# 케이스 데이터 로드\ncase = vitalab.load_case(123)\nvitals = case.get_vitals(['HR', 'SBP', 'DBP'])",
+        "installButton": "패키지 설치",
+        "learnMore": "더 알아보기",
+        "version": "버전: 2.1.3",
+        "compatibility": "Pandas 및 NumPy 호환"
+      },
+      "dataViewer": {
+        "title": "인터랙티브",
+        "subtitle": "데이터 뷰어",
+        "tag": "실시간 분석",
+        "description": "인터랙티브 웹 기반 데이터 뷰어로 VitalDB 데이터를 시각화하고 분석하세요. 맞춤형 시각화를 만들고 결과를 내보낼 수 있습니다.",
+        "features": "지원 차트\n라인, 영역, 산점도, 박스 플롯\n데이터 내보내기\nCSV, JSON, Excel",
+        "demoButton": "데모 사용해보기",
+        "learnMore": "더 알아보기",
+        "platform": "웹 및 데스크톱",
+        "tools": "주석 도구 사용 가능"
+      },
+      "researchPapers": {
+        "anesthesia": "마취 중 저혈압 예측 알고리즘",
+        "icu": "중환자실 사망률 예측을 위한 머신러닝",
+        "waveform": "고해상도 동맥압 파형 분석 기법 연구",
+        "journal": "저널",
+        "year": "년도",
+        "vitaldb": "VitalDB, 수술 환자에서의 고품질 다중 매개 변수 생체 신호 데이터베이스",
+        "deeplearning": "측면 경추 방사선 특징을 Cormack-Lehane 등급 3 또는 4 성문 뷰와 연결하는 딥러닝 모델",
+        "vitalrecorder": "Vital Recorder - 다양한 마취 장치에서 고해상도 시간 동기화 생리학적 데이터를 자동으로 기록하는 무료 연구 도구",
+        "tags": {
+          "ai": "AI",
+          "prediction": "예측 모델",
+          "anesthesia": "마취",
+          "icu": "중환자실",
+          "ml": "머신러닝",
+          "mortality": "사망률",
+          "waveform": "파형 분석",
+          "hemodynamics": "헤모다이나믹스",
+          "dataset": "데이터셋",
+          "vitalsigns": "생체신호",
+          "deeplearning": "딥러닝",
+          "radiography": "방사선촬영",
+          "vitalrecorder": "바이탈레코더",
+          "physiological": "생리학적 데이터"
+        }
+      },
+      "researchStats": {
+        "papers": "연구 논문",
+        "institutions": "의과대학",
+        "countries": "국가",
+        "trials": "임상 시험"
+      },
+      "testimonialUsers": {
+        "user1": {
+          "name": "김지훈 교수",
+          "role": "서울의대 마취통증의학과",
+          "content": "VitalLab의 데이터셋은 저희 연구팀의 AI 모델 개발에 필수적이었습니다. 고해상도 웨이브폼 데이터 덕분에 마취 중 합병증 예측 정확도가 크게 향상되었습니다."
+        },
+        "user2": {
+          "name": "사라 존슨 의학박사",
+          "role": "심혈관 연구원",
+          "content": "VitalRecorder는 임상 연구에서 데이터를 수집하는 방식을 혁신했습니다. 실시간 시각화와 API 접근 덕분에 데이터 처리에 들어가는 시간이 크게 줄었습니다."
+        },
+        "user3": {
+          "name": "이성민 연구원",
+          "role": "의료 AI 스타트업 CTO",
+          "content": "Python 라이브러리의 사용 편의성이 놀랍습니다. 데이터 전처리부터 분석까지 원스톱으로 처리할 수 있어 개발 속도가 크게 향상되었습니다."
+        }
+      }
+    },
+    "stats": {
+      "researchers": "연구자",
+      "monitoringBeds": "활성 모니터링 병상",
+      "totalCases": "총 케이스 수"
+    },
+    "footer": {
+      "resources": "리소스",
+      "community": "커뮤니티",
+      "legal": "법적 정보",
+      "openDataset": "오픈 데이터셋",
+      "vitalRecorder": "바이탈레코더",
+      "webMonitoring": "웹 모니터링",
+      "documentation": "문서",
+      "forum": "포럼",
+      "github": "GitHub",
+      "contactUs": "문의하기",
+      "research": "연구",
+      "termsOfService": "서비스 이용약관",
+      "privacyPolicy": "개인정보 처리방침",
+      "license": "라이센스",
+      "citations": "인용",
+      "description": "의료용 생체신호 데이터 수집, 분석 및 연구를 위한 종합 플랫폼입니다.",
+      "madeWith": "만든 이",
+      "forResearchers": "전 세계 연구자들을 위해",
+      "language": "언어"
+    },
+    "docs": {
+      "title": "문서",
+      "subtitle": "사용자 가이드, 개발자 가이드, API 참조, 튜토리얼 등을 찾아보세요",
+      "generalInfo": "일반 정보",
+      "generalInfoDesc": "VitalDB, 출판물 및 서비스 약관에 대해 알아보세요",
+      "vitalRecorder": "바이탈레코더",
+      "vitalRecorderDesc": "Vital Recorder 소프트웨어 사용자 매뉴얼 및 가이드",
+      "webMonitoring": "웹 모니터링",
+      "webMonitoringDesc": "VitalDB의 웹 모니터링 기능 사용 방법",
+      "myFiles": "내 파일",
+      "myFilesDesc": "VitalDB에서 파일 관리 및 다운로드",
+      "openDataset": "오픈 데이터셋",
+      "openDatasetDesc": "VitalDB 오픈 데이터셋 개요",
+      "api": "API",
+      "apiDesc": "VitalDB 프로그래밍 액세스를 위한 API 문서",
+      "vitalserver": "Vitalserver",
+      "vitalserverDesc": "온프레미스 Vitalserver 설정 및 사용 가이드",
+      "needHelp": "추가 도움이 필요하신가요?",
+      "needHelpDesc": "찾으시는 정보가 없나요? 추가 지원을 위해 지원팀에 문의하세요.",
+      "contactSupport": "지원팀 문의",
+      "tableOfContents": "목차",
+      "overview": "개요",
+      "features": "기능",
+      "interface": "사용자 인터페이스",
+      "tutorials": "튜토리얼",
+      "installation": "설치",
+      "usage": "사용 가이드",
+      "apiReference": "API 참조"
+    },
+    "forum": {
+      "title": "토론 포럼",
+      "description": "전 세계 연구자 및 의료 전문가들과 대화에 참여하세요. 통찰력을 공유하고, 질문하고, 생체신호 데이터 분석에 협력하세요.",
+      "latestPosts": "최신 게시물",
+      "totalPosts": "총 {{count}}개 게시물",
+      "categories": {
+        "all": "모든 게시물",
+        "question": "질문",
+        "discussion": "토론",
+        "notice": "공지사항" 
+      },
+      "category": "카테고리",
+      "table": {
+        "category": "카테고리",
+        "title": "제목",
+        "author": "작성자",
+        "views": "조회수",
+        "date": "날짜"
+      },
+      "noPosts": "게시물이 없습니다.",
+      "createPost": "게시물 작성"
     },
     "vitalDB": {
       "title": "VitalDB 개요",
@@ -117,47 +782,204 @@
           "acquisitionInterval": "획득 간격(초)"
         },
         "parameterList": {
-          "title": "파라미터 목록",
+          "title": "변수 목록",
           "clinicalInfo": {
-            "title": "임상 정보",
-            "parameter": "파라미터",
-            "dataSource": "데이터 소스",
-            "description": "설명",
-            "unit": "단위"
+            "title": "임상 정보"
           },
           "hemodynamic": {
-            "title": "혈역학적 파라미터",
-            "note": "* 파라미터 이름은 \"장치 이름/데이터 트랙 이름\" 형식입니다. W=파형; N=숫자; S=문자열",
-            "parameter": "파라미터",
-            "description": "설명",
-            "typeHz": "유형/Hz",
-            "unit": "단위"
+            "title": "혈역학적 변수"
           },
           "labResults": {
-            "title": "검사 결과",
-            "parameter": "파라미터",
-            "dataSource": "데이터 소스",
-            "category": "카테고리",
-            "description": "설명",
-            "unit": "단위",
-            "refValue": "참조값"
+            "title": "검사 결과"
           }
         },
         "dataUseAgreement": {
-          "title": "데이터 사용 동의서",
-          "objective": "1. 목적",
-          "objectiveText": "본 계약(이하 \"계약\")은 대한민국 개인정보보호법 제18조 (2) 4항 및 생명윤리법 제16조 (3)항, 그리고 미국 건강보험 이전 및 책임에 관한 법(HIPPA) 규정 45 CFR Part 160 및 Part 164에 따라 작성되었습니다. 이 계약은 VitalDB 팀(이하 \"제공자\")가 제공하는 제한된 데이터 세트(이하 \"데이터\")에 데이터 사용자(이하 \"사용자\")가 접근할 수 있도록 하는 데 필요한 세부 사항을 명시하기 위한 것입니다.",
-          "terms": "2. 용어",
-          "termsText": "달리 명시되지 않는 한, 이 계약에서 사용되는 용어의 정의는 대한민국 개인정보보호법 및 미국 HIPPA 규정에 의해 규제됩니다.",
-          "license": "3. 라이센스",
-          "licenseText": "사용자는 당사의 이용 약관에 따라 제공자 웹사이트에서 데이터셋을 사용할 수 있습니다. 데이터셋은 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 (CC BY-NC-SA 4.0) 라이센스에 따라 사용자에게 제공됩니다. 이 라이센스 유형은 데이터의 보급 및 사용을 최대화하기 위해 VitalDB 오픈 데이터셋에 적용되었습니다.",
-          "readFullAgreement": "전체 계약 읽기"
+          "title": "데이터 사용 동의"
         },
         "acknowledgement": {
-          "title": "감사의 글",
-          "paragraph1": "현재 우리 프로젝트는 한국 정부(과학기술정보통신부, 산업통상자원부, 보건복지부, 식품의약품안전처)가 지원하는 한국 의료기기 개발 기금 지원금(프로젝트 번호: KMDF_PR_20200901_0144, 9991006817); 과학기술정보통신부의 ITRC(정보기술연구센터) 지원 프로그램(IITP-2018-2018-0-01833); 그리고 한국 정부(과학기술정보통신부)가 지원하는 한국연구재단(NRF) 지원금(NRF-2018R1A5A1060031)으로 지원받고 있습니다.",
-          "paragraph2": "이 프로젝트는 이전에 한국 정부(교육과학기술부)가 지원하는 한국연구재단(NRF) 지원금(NRF-2015R1A2A2A01003962)으로 지원받았습니다."
+          "title": "감사의 글"
+        },
+        "webApi": {
+          "title": "웹 API",
+          "introduction": "소개",
+          "apiKey": "API 키 받기",
+          "endpoints": "API 엔드포인트",
+          "responseFormats": "응답 형식",
+          "rateLimits": "사용 제한",
+          "clientLibraries": "클라이언트 라이브러리"
+        },
+        "pythonLibrary": {
+          "title": "파이썬 라이브러리",
+          "introduction": "소개",
+          "installation": "설치",
+          "quickStart": "퀵 스타트",
+          "keyFeatures": "주요 기능",
+          "dataClasses": "데이터 클래스",
+          "advancedExample": "고급 예제"
+        },
+        "dataViewer": {
+          "title": "데이터 뷰어",
+          "introduction": "소개",
+          "description": "인터랙티브 데이터 뷰어를 통해 VitalDB 데이터에 접근하고 시각화하세요. 생체 신호 데이터를 실시간 시각화와 분석을 통해 탐색할 수 있습니다.",
+          "gettingStarted": "시작하기",
+          "dataVisualization": "데이터 시각화",
+          "features": {
+            "interactiveCharts": {
+              "title": "인터랙티브 차트",
+              "description": "환자 생체 신호 데이터로 맞춤형 시각화 생성"
+            },
+            "advancedFiltering": {
+              "title": "고급 필터링",
+              "description": "강력한 검색 기능으로 특정 데이터셋 찾기"
+            },
+            "dataExport": {
+              "title": "데이터 내보내기",
+              "description": "시각화 및 원시 데이터를 다양한 형식으로 내보내기"
+            }
+          },
+          "instructions": {
+            "accessDataViewer": "데이터 뷰어 접근",
+            "accessDataViewerDesc": "계정 대시보드에서 VitalDB 데이터 뷰어 섹션으로 이동",
+            "selectPatientData": "환자 데이터 선택",
+            "selectPatientDataDesc": "사용 가능한 데이터셋 탐색 또는 특정 케이스 검색",
+            "customizeVisualization": "시각화 맞춤 설정",
+            "customizeVisualizationDesc": "매개변수, 시간 범위 및 차트 유형 선택",
+            "analyzeResults": "결과 분석",
+            "analyzeResultsDesc": "통계 및 파형 분석을 위한 내장 도구 사용"
+          },
+          "readDocumentation": "전체 문서 읽기",
+          "exampleVisualizations": "예시 시각화",
+          "bpTrends": {
+            "title": "혈압 추이",
+            "description": "수술 중 시간 경과에 따른 수축기 및 이완기 혈압 시각화"
+          },
+          "ecgWaveform": {
+            "title": "ECG 파형 분석",
+            "description": "심박 감지 기능이 있는 상세 ECG 신호 파형 시각화"
+          }
         }
+      }
+    },
+    "admin": {
+      "dashboard": "대시보드",
+      "users": "사용자",
+      "content": "콘텐츠",
+      "datasets": "데이터셋",
+      "reports": "보고서",
+      "alerts": "알림",
+      "settings": "설정",
+      "logout": "로그아웃",
+      "overview": "개요",
+      "newUsers": "신규 사용자",
+      "activeUsers": "활성 사용자",
+      "totalDatasets": "전체 데이터셋",
+      "storage": "사용된 저장공간",
+      "recentActivity": "최근 활동",
+      "quickActions": "빠른 작업",
+      "addUser": "사용자 추가",
+      "editUser": "사용자 편집",
+      "deleteUser": "사용자 삭제",
+      "approveUser": "사용자 승인",
+      "addContent": "콘텐츠 추가",
+      "uploadDataset": "데이터셋 업로드",
+      "generateReport": "보고서 생성",
+      "systemStatus": "시스템 상태",
+      "pendingApprovals": "승인 대기 중",
+      "statistics": "통계",
+      "userManagement": "사용자 관리",
+      "contentManagement": "콘텐츠 관리",
+      "datasetManagement": "데이터셋 관리",
+      "viewDetails": "상세 보기",
+      "status": {
+        "active": "활성",
+        "inactive": "비활성",
+        "pending": "대기 중",
+        "blocked": "차단됨"
+      },
+      "role": {
+        "admin": "관리자",
+        "user": "사용자",
+        "moderator": "중재자",
+        "researcher": "연구자"
+      }
+    },
+    "auth": {
+      "welcome": "의료 데이터 플랫폼에 오신 것을 환영합니다",
+      "description": "업계 선도적인 의료 데이터 관리 및 분석 플랫폼에서 데이터를 안전하게 저장하고 활용하세요.",
+      "login": {
+        "title": "로그인",
+        "noAccount": "계정이 없으신가요?",
+        "register": "회원가입",
+        "email": "이메일",
+        "password": "비밀번호",
+        "forgotPassword": "비밀번호 찾기",
+        "rememberMe": "로그인 상태 유지",
+        "signIn": "로그인",
+        "loggingIn": "로그인 중...",
+        "orContinueWith": "또는",
+        "error": {
+          "invalidCredentials": "이메일 또는 비밀번호가 올바르지 않습니다",
+          "requiredFields": "이메일과 비밀번호를 입력해주세요",
+          "loginFailed": "로그인에 실패했습니다. 다시 시도해주세요."
+        }
+      },
+      "register": {
+        "title": "회원가입",
+        "haveAccount": "이미 계정이 있으신가요?",
+        "login": "로그인",
+        "name": "이름",
+        "namePlaceholder": "홍길동",
+        "email": "이메일",
+        "password": "비밀번호",
+        "confirmPassword": "비밀번호 확인",
+        "agreeTerms": "서비스 이용약관 및 개인정보 처리방침에 동의합니다",
+        "createAccount": "계정 만들기",
+        "creatingAccount": "계정 생성 중...",
+        "orContinueWith": "또는",
+        "passwordStrength": {
+          "none": "비밀번호를 입력하세요",
+          "weak": "약함",
+          "fair": "보통",
+          "good": "좋음",
+          "strong": "강함"
+        },
+        "passwordRequirements": {
+          "length": "8자 이상",
+          "uppercase": "대문자 포함",
+          "number": "숫자 포함",
+          "special": "특수문자 포함"
+        },
+        "error": {
+          "passwordMismatch": "비밀번호가 일치하지 않습니다",
+          "weakPassword": "더 강력한 비밀번호를 사용해주세요",
+          "requiredFields": "모든 필드를 입력해주세요",
+          "termsRequired": "서비스 이용약관 및 개인정보 처리방침에 동의해주세요",
+          "registrationFailed": "회원가입에 실패했습니다. 다시 시도해주세요."
+        }
+      }
+    },
+    "publications": {
+      "title": "연구 성과",
+      "subtitle": "연구 논문 및 학술 성과",
+      "description": "VitalLab 도구와 데이터셋을 활용한 연구자들의 최신 연구 논문과 학술 성과를 살펴보세요.",
+      "featuredArticles": "주요 논문",
+      "selectedPublications": "선별된 출판물",
+      "byYear": "연도별 출판물",
+      "viewPaper": "논문 보기",
+      "author": "저자",
+      "journal": "저널",
+      "year": "연도",
+      "doi": "DOI",
+      "citation": "인용",
+      "abstract": "초록",
+      "fullPublications": "전체 출판물은 Google Scholar에서 확인할 수 있습니다",
+      "categories": {
+        "all": "모든 출판물",
+        "2023": "2023년",
+        "2022": "2022년",
+        "2021": "2021년",
+        "2020": "2020년",
+        "older": "2019년 이전"
       }
     }
   }

@@ -1,2 +1,73 @@
-/backend-data
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+/front/node_modules
+/front/.next/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+/backend-data/__pycache__/
+/backend-data/.venv/
+/backend-data/.pytest_cache/
+
+# testing
+/coverage
+.coverage
+htmlcov/
+
+# Production
+/build
+/dist
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 /front/.idea
+
+# System files
+.DS_Store
+Thumbs.db
+/backend-data/.idea

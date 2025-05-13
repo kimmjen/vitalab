@@ -5,16 +5,16 @@ import translations from '../../../public/locales/translations.json';
 
 // 언어 컨텍스트를 위한 타입 정의
 type LanguageContextType = {
-    locale: string;
+    language: string;
     t: (key: string) => string;
-    changeLanguage: (locale: string) => void;
+    setLanguage: (language: string) => void;
 };
 
 // 기본값을 가진 언어 컨텍스트 생성
 const LanguageContext = createContext<LanguageContextType>({
-    locale: 'en',
+    language: 'en',
     t: () => '',
-    changeLanguage: () => {},
+    setLanguage: () => {},
 });
 
 // 언어 컨텍스트를 사용하기 위한 훅
@@ -34,30 +34,30 @@ const getNestedTranslation = (obj: any, path: string): string => {
 // 언어 제공자 컴포넌트
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     // 기본 언어는 영어로 설정
-    const [locale, setLocale] = useState('en');
+    const [language, setLanguageState] = useState('en');
 
     // 컴포넌트 마운트 시 localStorage에서 언어 설정 가져오기
     useEffect(() => {
         // 클라이언트 사이드에서만 실행
         if (typeof window !== 'undefined') {
-            const savedLocale = localStorage.getItem('locale');
-            if (savedLocale && ['en', 'ko'].includes(savedLocale)) {
-                setLocale(savedLocale);
+            const savedLanguage = localStorage.getItem('language');
+            if (savedLanguage && ['en', 'ko'].includes(savedLanguage)) {
+                setLanguageState(savedLanguage);
             } else {
                 // 브라우저 언어 감지 시도
                 const browserLang = navigator.language.split('-')[0];
-                const newLocale = browserLang === 'ko' ? 'ko' : 'en';
-                setLocale(newLocale);
-                localStorage.setItem('locale', newLocale);
+                const newLanguage = browserLang === 'ko' ? 'ko' : 'en';
+                setLanguageState(newLanguage);
+                localStorage.setItem('language', newLanguage);
             }
         }
     }, []);
 
-    // 번역 함수 - locale이 변경될 때마다 새로운 함수 인스턴스가 생성되므로 의존하는 컴포넌트가 리렌더링됨
+    // 번역 함수 - language가 변경될 때마다 새로운 함수 인스턴스가 생성되므로 의존하는 컴포넌트가 리렌더링됨
     const t = (key: string): string => {
-        const lang = locale as keyof typeof translations;
+        const lang = language as keyof typeof translations;
         if (!translations[lang]) {
-            console.warn(`Language not supported: ${locale}`);
+            console.warn(`Language not supported: ${language}`);
             return key;
         }
 
@@ -66,20 +66,20 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     };
 
     // 언어 변경 함수
-    const changeLanguage = (newLocale: string) => {
-        if (['en', 'ko'].includes(newLocale)) {
-            setLocale(newLocale);
-            localStorage.setItem('locale', newLocale);
+    const setLanguage = (newLanguage: string) => {
+        if (['en', 'ko'].includes(newLanguage)) {
+            setLanguageState(newLanguage);
+            localStorage.setItem('language', newLanguage);
         } else {
-            console.warn(`Language not supported: ${newLocale}`);
+            console.warn(`Language not supported: ${newLanguage}`);
         }
     };
 
-    // 컨텍스트에 제공할 값 - locale이 변경될 때마다 새 객체가 생성됨
+    // 컨텍스트에 제공할 값 - language가 변경될 때마다 새 객체가 생성됨
     const contextValue = {
-        locale,
+        language,
         t,
-        changeLanguage,
+        setLanguage,
     };
 
     return (

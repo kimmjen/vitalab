@@ -1,37 +1,43 @@
 // src/app/layout.tsx
 import './globals.css'
-import {ThemeProvider} from "@/app/providers"
-import {Header} from "@/components/layout/Header"
-import {Footer} from "@/components/layout/Footer"
-import {Breadcrumb} from "@/components/layout/Breadcrumb"
-import {LanguageProvider} from "@/components/providers/LanguageProvider";
+import { Inter } from 'next/font/google'
+import Script from 'next/script'
+import { Toaster } from '@/components/ui/toaster'
+import { ThemeProvider } from './providers'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'VitalLab - Medical Data Platform',
+  description: 'Comprehensive vital signs platform for medical research',
+}
 
 export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode
+  children,
+}: {
+  children: React.ReactNode
 }) {
-    return (
-        <html lang="ko" suppressHydrationWarning>
-        <body className="min-h-screen bg-white dark:bg-gray-950">
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <LanguageProvider>
-                <div className="flex flex-col min-h-screen">
-                    <Header/>
-                    <Breadcrumb/>
-                    <main className="flex-1">
-                        {children}
-                    </main>
-                    <Footer/>
-                </div>
-            </LanguageProvider>
+  return (
+    <html lang="ko" suppressHydrationWarning className={inter.className}>
+      <head />
+      <body className="min-h-screen">
+        {/* 다크모드 감지 스크립트 */}
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            try {
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+              } else {
+                document.documentElement.classList.remove('dark')
+              }
+            } catch (e) {}
+          `}
+        </Script>
+        <ThemeProvider>
+          {children}
+          <Toaster />
         </ThemeProvider>
-        </body>
-        </html>
-    )
+      </body>
+    </html>
+  )
 }

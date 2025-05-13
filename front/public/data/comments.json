@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "noticeId": "6",
+    "author": "Sch",
+    "content": "Hi,\nI hope I can record Sedline and O3 parameters too.\nThank you for your efforts.",
+    "createdAt": "2018-08-19T15:22:00Z"
+  },
+  {
+    "id": "2",
+    "noticeId": "6",
+    "author": "vitaldb2017",
+    "content": "Hardware Connection Guide updated. For more information, please see the link below.\n\n한글) https://vitaldb.net/docs/document?documentId=1f3GUiBOPEgjHViKm9ePf_qNwBXRNQPI3X9MhJC44oeY&ionId=h.1rznd6ng7zf9\n\nEnglish) https://vitaldb.net/docs/document?documentId=1GFqZPtQhxEBd7hkLrTc7KIojxmkICtZi8zNsx6esk24&ionId=h.rlonx8a6cxyi",
+    "createdAt": "2018-12-01T13:06:00Z"
+  },
+  {
+    "id": "3",
+    "noticeId": "6",
+    "author": "Maarten",
+    "content": "Hi,\nWould it be possible to add the ventilatory data from the Masimo Root in VitalDB as well? At this moment, we are not able to receive this data, only the the pulse oximeter data (without the plethysmograph) of the Masimo Root works.\nFurthermore, we are not able to connect vitalDB with our Edwards Hemosphere and our Philips Intellivue (vitalDB recognizes the COM port, but no data is shown). We followed all the steps for the documentation but something seems not working, would it be possible to get in contact with you? Thanks for your effort in this project, Maarten",
+    "createdAt": "2021-11-25T13:44:00Z"
+  },
+  {
+    "id": "4",
+    "noticeId": "1",
+    "author": "사용자A",
+    "content": "공지사항 확인했습니다. 점검 시간에 주의하겠습니다.",
+    "createdAt": "2024-06-16T09:12:00Z"
+  },
+  {
+    "id": "5", 
+    "noticeId": "1",
+    "author": "사용자B",
+    "content": "예정된 점검 시간에 접속이 불가능한가요? 아니면 일부 기능만 제한되나요?",
+    "createdAt": "2024-06-16T10:45:00Z"
+  },
+  {
+    "id": "6",
+    "noticeId": "1",
+    "author": "관리자",
+    "content": "안녕하세요, 사용자B님. 점검 시간 동안에는 웹사이트 접속 자체가 일시적으로 제한될 수 있습니다. 필요한 작업이 있으시다면 미리 완료해주시기 바랍니다.",
+    "createdAt": "2024-06-16T11:30:00Z"
+  },
+  {
+    "id": "7",
+    "noticeId": "2",
+    "author": "연구자123",
+    "content": "새로 추가된 소아 환자 데이터는 어떤 수술 종류가 포함되어 있나요?",
+    "createdAt": "2024-06-11T08:25:00Z"
+  },
+  {
+    "id": "8",
+    "noticeId": "2",
+    "author": "데이터 관리자",
+    "content": "주로 소아 심장 수술 및 일반 수술 환자 데이터가 포함되어 있습니다. 자세한 내용은 데이터셋 문서를 참조해주세요.",
+    "createdAt": "2024-06-11T09:10:00Z"
+  }
+] 

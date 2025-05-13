@@ -25,7 +25,10 @@ export function ForumTabs() {
                             ? "text-blue-500 border-b-2 border-blue-500"
                             : "text-gray-600 hover:text-gray-900"
                     }`}
-                    onClick={() => router.push(tab.path)}
+                    onClick={() => {
+                        router.push(tab.path);
+                        window.scrollTo(0, 0);
+                    }}
                 >
                     {tab.label}
                 </Button>

@@ -2,6 +2,7 @@
 'use client'
 
 import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { NotificationProvider } from "@/components/providers/NotificationProvider"
 
 export function ThemeProvider({
                                   children,
@@ -10,5 +11,11 @@ export function ThemeProvider({
     children: React.ReactNode;
     [key: string]: any;
 }) {
-    return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+    return (
+        <NextThemesProvider {...props}>
+            <NotificationProvider>
+                {children}
+            </NotificationProvider>
+        </NextThemesProvider>
+    )
 }

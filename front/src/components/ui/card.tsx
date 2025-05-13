@@ -1,17 +1,42 @@
 import * as React from "react"
-
+import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
+
+const cardVariants = cva(
+  "rounded-2xl border bg-card text-card-foreground shadow transition-all duration-200",
+  {
+    variants: {
+      variant: {
+        default: "bg-white dark:bg-gray-800",
+        outline: "border border-gray-200 dark:border-gray-700 bg-transparent",
+        filled: "bg-gray-100 dark:bg-gray-800/70 border-none",
+        elevated: "shadow-md hover:shadow-lg",
+        interactive: "hover:scale-[1.01] hover:shadow-md cursor-pointer",
+      },
+      radius: {
+        default: "rounded-2xl",
+        lg: "rounded-3xl",
+        full: "rounded-[2rem]",
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      radius: "default",
+    },
+  }
+)
+
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {}
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+  CardProps
+>(({ className, variant, radius, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
-      className
-    )}
+    className={cn(cardVariants({ variant, radius }), className)}
     {...props}
   />
 ))
@@ -35,7 +60,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    className={cn("text-lg md:text-xl font-semibold leading-none tracking-tight", className)}
     {...props}
   />
 ))
@@ -47,7 +72,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-gray-500 dark:text-gray-400", className)}
     {...props}
   />
 ))
@@ -67,7 +92,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center justify-between p-6 pt-0", className)}
     {...props}
   />
 ))
