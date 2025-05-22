@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "lastUpdate": "2023-12-15",
+    "downloadCount": 164375,
+    "citation": "Lee HC, Jung CW. VitalRecorder-a free research tool for automatic recording of high-resolution time-synchronised physiological data from multiple anaesthesia devices. Sci Rep. 2018 Jan 24;8(1):1527. doi: 10.1038/s41598-018-20062-4.",
+    "citationLink": "https://www.nature.com/articles/s41598-018-20062-4"
+  },
+  "versions": [
+    {
+      "id": "1",
+      "version": "1.15.5",
+      "os": "windows",
+      "filename": "VitalRecorder-1.15.5-win64.zip",
+      "fileSize": "24.5 MB",
+      "uploadDate": "2023-10-15",
+      "notes": "Bug Fixed: saving the raw data",
+      "isActive": true,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.5-win64.zip"
+    },
+    {
+      "id": "2",
+      "version": "1.15.5",
+      "os": "raspberry-32",
+      "filename": "VitalRecorder-1.15.5-raspberry32.zip",
+      "fileSize": "18.2 MB",
+      "uploadDate": "2023-10-15",
+      "notes": "Bug Fixed: saving the raw data",
+      "isActive": true,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.5-raspberry32.zip"
+    },
+    {
+      "id": "3",
+      "version": "1.15.5",
+      "os": "raspberry-64",
+      "filename": "VitalRecorder-1.15.5-raspberry64.zip",
+      "fileSize": "19.1 MB",
+      "uploadDate": "2023-10-15",
+      "notes": "Bug Fixed: saving the raw data",
+      "isActive": true,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.5-raspberry64.zip"
+    },
+    {
+      "id": "4",
+      "version": "1.15.5",
+      "os": "ubuntu",
+      "filename": "VitalRecorder-1.15.5-ubuntu.zip",
+      "fileSize": "22.3 MB",
+      "uploadDate": "2023-10-15",
+      "notes": "Bug Fixed: saving the raw data",
+      "isActive": true,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.5-ubuntu.zip"
+    },
+    {
+      "id": "5",
+      "version": "1.15.4",
+      "os": "windows",
+      "filename": "VitalRecorder-1.15.4-win64.zip",
+      "fileSize": "24.3 MB",
+      "uploadDate": "2023-09-20",
+      "notes": "Added: Recording alarms from Philips monitor",
+      "isActive": false,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.4-win64.zip"
+    },
+    {
+      "id": "6",
+      "version": "1.15.3",
+      "os": "windows",
+      "filename": "VitalRecorder-1.15.3-win64.zip",
+      "fileSize": "24.1 MB",
+      "uploadDate": "2023-08-15",
+      "notes": "Bug fixed: saving the raw data",
+      "isActive": false,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.3-win64.zip"
+    },
+    {
+      "id": "7",
+      "version": "1.15.2",
+      "os": "windows",
+      "filename": "VitalRecorder-1.15.2-win64.zip",
+      "fileSize": "23.9 MB",
+      "uploadDate": "2023-07-10",
+      "notes": "Fixed: bug in opening file",
+      "isActive": false,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.2-win64.zip"
+    },
+    {
+      "id": "8",
+      "version": "1.15.1",
+      "os": "windows",
+      "filename": "VitalRecorder-1.15.1-win64.zip",
+      "fileSize": "23.8 MB",
+      "uploadDate": "2023-06-05",
+      "notes": "Supporting for Fresenius Kabi Conox, Minor Bug fixes",
+      "isActive": false,
+      "downloadUrl": "/downloads/VitalRecorder-1.15.1-win64.zip"
+    }
+  ],
+  "osTypes": [
+    { "label": "Windows", "value": "windows" },
+    { "label": "Raspberry Pi 32bit", "value": "raspberry-32" },
+    { "label": "Raspberry Pi 64bit", "value": "raspberry-64" },
+    { "label": "Ubuntu", "value": "ubuntu" }
+  ],
+  "version": "2.0.4",
+  "releaseDate": "2023-09-15",
+  "downloadUrl": "https://vitaldb.net/download/vitalrecorder",
+  "requirements": {
+    "os": "Windows 10/11",
+    "cpu": "Intel Core i3 or equivalent",
+    "ram": "4GB",
+    "storage": "500MB"
+  },
+  "features": [
+    "다중 장치 통합 레코딩",
+    "실시간 데이터 시각화",
+    "타임 스탬프 이벤트 기록",
+    "자동 백업 및 복구",
+    "다양한 형식으로 내보내기",
+    "분석 도구 통합"
+  ],
+  "supportedDevices": [
+    "Solar8000",
+    "BIS Monitor",
+    "PiCCO",
+    "TCI Pump",
+    "INVOS"
+  ],
+  "changelog": [
+    {
+      "version": "2.0.4",
+      "date": "2023-09-15",
+      "changes": [
+        "USB 연결 안정성 개선",
+        "데이터 저장 최적화",
+        "UI 성능 향상",
+        "솔라 8000 장치 호환성 업데이트"
+      ]
+    },
+    {
+      "version": "2.0.3",
+      "date": "2023-07-02",
+      "changes": [
+        "버그 수정: 장시간 기록 시 메모리 누수 문제 해결",
+        "신규 장치 지원 추가",
+        "다크 모드 UI 개선"
+      ]
+    }
+  ]
+} 
