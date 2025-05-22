@@ -42,8 +42,15 @@ export default function Home() {
     
     // 파트너 데이터를 가져옵니다
     useEffect(() => {
-        const visiblePartners = usePartnersStore.getState().getVisiblePartners();
-        setPartners(visiblePartners);
+        const loadPartners = async () => {
+            const state = usePartnersStore.getState();
+            await state.getPartners();
+            // 활성화된 파트너만 필터링
+            const activePartners = state.partners.filter(partner => partner.isActive);
+            setPartners(activePartners);
+        };
+        
+        loadPartners();
     }, []);
 
     // 고정된 부동 요소 데이터 생성

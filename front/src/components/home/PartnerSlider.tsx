@@ -8,8 +8,11 @@ interface Partner {
   id: number;
   name: string;
   logo?: string;
-  url?: string;
+  website?: string;
   description?: string;
+  isActive?: boolean;
+  category?: 'academic' | 'industry' | 'hospital' | 'research';
+  country?: string;
 }
 
 interface PartnerSliderProps {
