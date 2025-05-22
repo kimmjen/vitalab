@@ -1,6 +1,7 @@
 // src/app/page.tsx
 'use client';
 
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { StatsSlider } from "@/components/home/HeroSection/StatsSlider"
 import { VitalRecorderCard } from "@/components/home/MainContent/VitalRecorderCard"
 import { WebApiCard } from "@/components/home/MainContent/WebApiCard"
@@ -9,14 +10,44 @@ import { DataViewerCard } from "@/components/home/MainContent/DataViewerCard"
 import { ListCard } from "@/components/home/MainContent/ListCard"
 import { NOTICES, DISCUSSIONS } from "@/lib/constants/home"
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { ArrowRight, Database, LineChart, Code, Activity, User, Download, ExternalLink } from "lucide-react";
+import { ArrowRight, Database, LineChart, Code, Activity, User, Download, ExternalLink, HandHeart, ArrowUpRight, Users, BookOpen, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { MultiRowPartnerSlider } from '@/components/home/PartnerSlider';
+import { usePartnersStore, Partner } from '@/lib/store/partnersStore';
+
+// 고정된 부동 요소 데이터를 생성하는 함수
+const generateFixedFloatingElements = () => {
+  // 서버와 클라이언트 간에 일관된 값 사용
+  return Array.from({ length: 15 }, (_, i) => ({
+    width: 5 + (i % 3) * 5, // 5px, 10px, 15px 순환
+    height: 5 + (i % 4) * 4, // 5px, 9px, 13px, 17px 순환
+    top: (i * 6.5) % 100, // 0%, 6.5%, 13%, ... 순환
+    left: (i * 7) % 100, // 0%, 7%, 14%, ... 순환
+    animation: `float ${15 + i}s linear infinite` // 15s, 16s, 17s, ... 순환
+  }));
+};
 
 export default function Home() {
     const { t } = useLanguage();
+    const [partners, setPartners] = useState<Partner[]>([]);
+    const [isClient, setIsClient] = useState(false);
+    
+    // 클라이언트 사이드 렌더링 확인
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+    
+    // 파트너 데이터를 가져옵니다
+    useEffect(() => {
+        const visiblePartners = usePartnersStore.getState().getVisiblePartners();
+        setPartners(visiblePartners);
+    }, []);
+
+    // 고정된 부동 요소 데이터 생성
+    const floatingElements = useMemo(() => generateFixedFloatingElements(), []);
 
     // Animation variants
     const container = {
@@ -276,21 +307,27 @@ export default function Home() {
                         </div>
                     </div>
                     
-                    {/* Enhanced floating elements */}
+                    {/* 서버와 클라이언트에서 일관된 부동 요소 */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        {[...Array(15)].map((_, i) => (
-                            <div 
-                                key={i}
-                                className="absolute rounded-full bg-blue-500 dark:bg-blue-400 opacity-10 dark:opacity-20"
-                                style={{
-                                    width: `${Math.random() * 15 + 5}px`,
-                                    height: `${Math.random() * 15 + 5}px`,
-                                    top: `${Math.random() * 100}%`,
-                                    left: `${Math.random() * 100}%`,
-                                    animation: `float ${Math.random() * 15 + 15}s linear infinite`
-                                }}
-                            ></div>
-                        ))}
+                        {isClient ? (
+                            // 클라이언트 사이드에서만 부동 요소 렌더링
+                            floatingElements.map((elem, i) => (
+                                <div 
+                                    key={i}
+                                    className="absolute rounded-full bg-blue-500 dark:bg-blue-400 opacity-10 dark:opacity-20"
+                                    style={{
+                                        width: `${elem.width}px`,
+                                        height: `${elem.height}px`,
+                                        top: `${elem.top}%`,
+                                        left: `${elem.left}%`,
+                                        animation: elem.animation
+                                    }}
+                                ></div>
+                            ))
+                        ) : (
+                            // 서버에서는 빈 div로 렌더링
+                            null
+                        )}
                     </div>
                     
                     {/* Bottom wave divider - larger waves */}
@@ -708,22 +745,12 @@ export default function Home() {
                             </p>
                         </motion.div>
                         
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center mb-14">
-                            {Array.from({ length: 12 }).map((_, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                                    className="h-16 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
-                                >
-                                    <div className="h-12 w-full bg-gray-200 dark:bg-gray-800 rounded opacity-70 hover:opacity-100 transition-opacity flex items-center justify-center">
-                                        <div className="text-xs font-medium text-gray-500 dark:text-gray-400">Partner {index + 1}</div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        {partners.length > 0 && (
+                            <MultiRowPartnerSlider 
+                                partners={partners}
+                                rowCount={2}
+                            />
+                        )}
                         
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

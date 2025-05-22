@@ -232,7 +232,7 @@ export default function VitalRecorderAdminPage() {
                       <TableCell>{version.fileSize}</TableCell>
                       <TableCell>{version.uploadDate}</TableCell>
                       <TableCell>
-                        <Badge variant={version.isActive ? "success" : "secondary"} className="gap-1">
+                        <Badge variant={version.isActive ? "default" : "secondary"} className="gap-1">
                           {version.isActive ? (
                             <>
                               <CheckCircle className="h-3 w-3" />

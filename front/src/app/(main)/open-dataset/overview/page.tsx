@@ -16,6 +16,7 @@ import DatasetSummary from "@/components/open-dataset/overview/DatasetSummary";
 import ParameterList from "@/components/open-dataset/overview/ParameterList";
 import DataUseAgreement from "@/components/open-dataset/overview/DataUseAgreement";
 import Acknowledgement from "@/components/open-dataset/overview/Acknowledgement";
+import { TableOfContents } from "@/components/open-dataset/TableOfContents";
 
 export default function OpenDatasetOverviewPage() {
     const { t } = useLanguage();
@@ -54,6 +55,16 @@ export default function OpenDatasetOverviewPage() {
 
                 {/* Main Content */}
                 <div className={`flex-1 prose dark:prose-invert max-w-none transition-opacity duration-300 ${contentReady ? 'opacity-100' : 'opacity-0'}`}>
+                    {/* Mobile Table of Contents */}
+                    <div className="lg:hidden mb-6">
+                        <details className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-sm">
+                            <summary className="font-medium cursor-pointer">Table of Contents</summary>
+                            <div className="mt-3">
+                                <TableOfContents />
+                            </div>
+                        </details>
+                    </div>
+                    
                     {/* Hero Banner */}
                     <HeroBanner />
                     

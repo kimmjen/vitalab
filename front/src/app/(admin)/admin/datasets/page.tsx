@@ -82,11 +82,11 @@ export default function AdminDatasetsPage() {
   ];
 
   // 상태에 따른 배지 스타일
-  const statusBadgeVariant = (status: string): 'success' | 'secondary' | 'warning' | 'outline' => {
+  const statusBadgeVariant = (status: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
     switch (status) {
-      case 'public': return 'success';
+      case 'public': return 'default';
       case 'private': return 'secondary';
-      case 'review': return 'warning';
+      case 'review': return 'destructive';
       default: return 'outline';
     }
   };

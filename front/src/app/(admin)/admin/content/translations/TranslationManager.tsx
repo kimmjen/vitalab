@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -88,89 +88,6 @@ export default function TranslationManager() {
   const [exportCategory, setExportCategory] = useState('all');
   const [importMode, setImportMode] = useState<'merge' | 'overwrite' | 'keep'>('merge');
 
-  // 서버 데이터 로딩 (Next.js 장점 활용)
-  useEffect(() => {
-    // 컴포넌트 마운트 시 번역 데이터 로드
-    if (!isDataLoaded) {
-      console.log('컴포넌트 마운트: 번역 데이터 로드 시작');
-      loadTranslationsFromApi();
-    }
-  }, [isDataLoaded]);
-
-  // Next.js API 라우트를 사용해 번역 데이터 로드
-  const loadTranslationsFromApi = async () => {
-    console.log('번역 데이터 로딩 시작');
-    setIsLoading(true);
-    
-    try {
-      // API 호출 대신 translations.json 파일을 직접 사용
-      const data = translations;
-      console.log('번역 데이터 로드됨:', Object.keys(data));
-      
-      // 데이터 처리 로직...
-      processTranslationData(data);
-      
-      toast({
-        title: "번역 데이터 로드 완료",
-        description: `${Object.keys(data).length}개 언어의 번역 데이터가 로드되었습니다.`,
-      });
-    } catch (error) {
-      console.error('번역 데이터 로딩 오류:', error);
-      setHasError(true);
-      
-      // 오류 발생 시 샘플 데이터 사용
-      setTranslationItems(createSampleTranslations());
-      
-      toast({
-        title: "번역 데이터 로드 실패",
-        description: error instanceof Error ? error.message : "알 수 없는 오류가 발생했습니다",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-      setIsDataLoaded(true);
-    }
-  };
-  
-  // 번역 데이터 처리 함수
-  const processTranslationData = (data: any) => {
-    // 언어 목록 추출
-    const languageCodes = Object.keys(data);
-    const languagesList: Language[] = languageCodes.map(code => ({
-      code,
-      name: getLanguageName(code),
-      progress: code === 'en' ? 100 : calculateProgress(data, code)
-    }));
-    
-    // 언어 정렬 (영어, 한국어, 기타 알파벳순)
-    languagesList.sort((a, b) => {
-      if (a.code === 'en') return -1;
-      if (b.code === 'en') return 1;
-      if (a.code === 'ko') return -1;
-      if (b.code === 'ko') return 1;
-      return a.name.localeCompare(b.name);
-    });
-    
-    // 카테고리 및 번역 아이템 추출
-    const categoriesList: Category[] = [];
-    const translationsList: TranslationItem[] = [];
-    
-    const firstLang = languageCodes[0];
-    Object.keys(data[firstLang]).forEach(categoryKey => {
-      categoriesList.push({
-        id: categoryKey,
-        name: categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1)
-      });
-      
-      // 카테고리의 번역 아이템 처리
-      processCategory(data, firstLang, categoryKey, translationsList);
-    });
-    
-    setLanguages(languagesList);
-    setCategories(categoriesList);
-    setTranslationItems(translationsList);
-  };
-  
   // Helper 함수들...
   const getLanguageName = (code: string): string => {
     const names: {[key: string]: string} = {
@@ -272,6 +189,89 @@ export default function TranslationManager() {
       processNestedObj(categoryObj);
     }
   };
+
+  // 번역 데이터 처리 함수
+  const processTranslationData = useCallback((data: any) => {
+    // 언어 목록 추출
+    const languageCodes = Object.keys(data);
+    const languagesList: Language[] = languageCodes.map(code => ({
+      code,
+      name: getLanguageName(code),
+      progress: code === 'en' ? 100 : calculateProgress(data, code)
+    }));
+    
+    // 언어 정렬 (영어, 한국어, 기타 알파벳순)
+    languagesList.sort((a, b) => {
+      if (a.code === 'en') return -1;
+      if (b.code === 'en') return 1;
+      if (a.code === 'ko') return -1;
+      if (b.code === 'ko') return 1;
+      return a.name.localeCompare(b.name);
+    });
+    
+    // 카테고리 및 번역 아이템 추출
+    const categoriesList: Category[] = [];
+    const translationsList: TranslationItem[] = [];
+    
+    const firstLang = languageCodes[0];
+    Object.keys(data[firstLang]).forEach(categoryKey => {
+      categoriesList.push({
+        id: categoryKey,
+        name: categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1)
+      });
+      
+      // 카테고리의 번역 아이템 처리
+      processCategory(data, firstLang, categoryKey, translationsList);
+    });
+    
+    setLanguages(languagesList);
+    setCategories(categoriesList);
+    setTranslationItems(translationsList);
+  }, []);
+
+  // Next.js API 라우트를 사용해 번역 데이터 로드
+  const loadTranslationsFromApi = useCallback(async () => {
+    console.log('번역 데이터 로딩 시작');
+    setIsLoading(true);
+    
+    try {
+      // API 호출 대신 translations.json 파일을 직접 사용
+      const data = translations;
+      console.log('번역 데이터 로드됨:', Object.keys(data));
+      
+      // 데이터 처리 로직...
+      processTranslationData(data);
+      
+      toast({
+        title: "번역 데이터 로드 완료",
+        description: `${Object.keys(data).length}개 언어의 번역 데이터가 로드되었습니다.`,
+      });
+    } catch (error) {
+      console.error('번역 데이터 로딩 오류:', error);
+      setHasError(true);
+      
+      // 오류 발생 시 샘플 데이터 사용
+      setTranslationItems(createSampleTranslations());
+      
+      toast({
+        title: "번역 데이터 로드 실패",
+        description: error instanceof Error ? error.message : "알 수 없는 오류가 발생했습니다",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+      setIsDataLoaded(true);
+    }
+  }, [toast, processTranslationData]);
+
+  // 서버 데이터 로딩 (Next.js 장점 활용)
+  useEffect(() => {
+    // 컴포넌트 마운트 시 번역 데이터 로드
+    if (!isDataLoaded) {
+      console.log('컴포넌트 마운트: 번역 데이터 로드 시작');
+      loadTranslationsFromApi();
+    }
+  }, [isDataLoaded, loadTranslationsFromApi]);
   
   // 로딩 재시도
   const handleRetryLoading = () => {

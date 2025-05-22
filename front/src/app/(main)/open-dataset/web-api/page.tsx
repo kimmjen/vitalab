@@ -69,7 +69,7 @@ export default function WebApiPage() {
                         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                         
                         <div className="relative z-10">
-                            <Badge variant="info" className="mb-6">RESTful API</Badge>
+                            <Badge variant="default" className="mb-6">RESTful API</Badge>
                             <h1 className="font-bold text-3xl md:text-4xl m-0 mb-4">
                                 VitalDB Web API
                             </h1>

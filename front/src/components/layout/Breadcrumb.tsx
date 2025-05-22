@@ -15,6 +15,7 @@ const breadcrumbMap: { [key: string]: string } = {
     'web-monitoring': 'Web Monitoring',
     'open-dataset': 'Open Dataset',
     'docs': 'Docs',
+    'data-list': 'Data List',
 };
 
 export function Breadcrumb() {

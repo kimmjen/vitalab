@@ -11,18 +11,17 @@ export function TableOfContents() {
     const pathname = usePathname();
 
     // 현재 페이지 경로에 따라 적절한 목차 구성을 결정
-    const isHomePage = pathname === '/open-dataset';
-    const isOverviewPage = pathname.includes('/overview');
-    const isWebApiPage = pathname.includes('/web-api');
-    const isPythonLibraryPage = pathname.includes('/python-library');
-    const isDataViewerPage = pathname.includes('/data-viewer');
+    const isHomePage = pathname === '/docs/open-dataset' || pathname === '/open-dataset';
+    const isOverviewPage = pathname.includes('/open-dataset/overview') || pathname.includes('/docs/open-dataset/overview');
+    const isWebApiPage = pathname.includes('/open-dataset/web-api') || pathname.includes('/docs/open-dataset/web-api');
+    const isPythonLibraryPage = pathname.includes('/open-dataset/python-library') || pathname.includes('/docs/open-dataset/python-library');
+    const isDataViewerPage = pathname.includes('/open-dataset/data-viewer') || pathname.includes('/docs/open-dataset/data-viewer');
 
     // 모든 페이지에 표시할 공통 요소
     return (
         <nav className="sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto pb-4">
             <div className="flex justify-between items-center mb-4">
                 <h3 className="font-bold text-lg">{t('common.contents')}</h3>
-                <LanguageSelector />
             </div>
 
             {/* Overview 페이지 목차 */}

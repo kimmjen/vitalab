@@ -1,0 +1,208 @@
+/* 알림 스타일 */
+.Toast {
+  background-color: white;
+  color: black;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .Toast {
+  background-color: #1f2937;
+  color: white;
+  border-color: #374151;
+}
+
+/* 차트 컨테이너 스타일 */
+.chart-container {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  background-color: #f8fafc;
+  padding: 0.5rem;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.dark .chart-container {
+  background-color: #111827;
+  border-color: #374151;
+}
+
+/* 알람 표시선 스타일 */
+.alarm-line {
+  stroke: #ff4560;
+  stroke-dasharray: 3 3;
+  stroke-width: 1.5;
+}
+
+/* 주석 표시 스타일 */
+.annotation-marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.annotation-line {
+  width: 1px;
+  height: 100%;
+  background-color: #818cf8;
+  opacity: 0.4;
+}
+
+.annotation-icon {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border-radius: 9999px;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  border: 1px solid #c7d2fe;
+}
+
+.dark .annotation-icon {
+  background-color: #312e81;
+  color: #a5b4fc;
+  border-color: #4338ca;
+}
+
+/* 스크롤 및 부드러운 차트 애니메이션 관련 스타일 */
+.chart-container-wrapper {
+  overflow-y: auto;
+  max-height: calc(100vh - 180px);
+  padding-bottom: 20px;
+}
+
+@media (max-height: 768px) {
+  .chart-container-wrapper {
+    max-height: calc(100vh - 200px);
+  }
+}
+
+.chart-item {
+  transition: all 0.2s ease-in-out;
+}
+
+/* 스크롤바 스타일링 */
+.chart-container-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chart-container-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.chart-container-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.dark .chart-container-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .chart-container-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 차트 그래프 스타일링 */
+.chart-graph {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.dark .chart-graph {
+  background-color: #1a1a2e;
+}
+
+/* 재생 시 렌더링 최적화 */
+.playing-optimize .recharts-surface {
+  will-change: transform;
+}
+
+/* 다크 모드 차트 스타일 */
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.dark .recharts-text {
+  fill: #e5e7eb;
+}
+
+.dark .recharts-default-tooltip {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.dark .recharts-tooltip-item {
+  color: #e5e7eb !important;
+}
+
+.dark .recharts-tooltip-label {
+  color: #9ca3af !important;
+}
+
+.dark .recharts-reference-line line {
+  stroke: rgba(239, 68, 68, 0.7);
+}
+
+/* 타임라인 커서 스타일 */
+.timeline-cursor {
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+}
+
+.dark .timeline-cursor {
+  box-shadow: 0 0 4px rgba(255, 100, 100, 0.7);
+}
+
+/* 차트 값 애니메이션 효과 */
+.chart-value {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.dark .chart-value {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* 타임라인 슬라이더 스타일 */
+input[type='range'] {
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #10b981 0%, #10b981 var(--range-progress, 0%), #d1d5db var(--range-progress, 0%), #d1d5db 100%);
+}
+
+.dark input[type='range'] {
+  background: linear-gradient(to right, #10b981 0%, #10b981 var(--range-progress, 0%), #4b5563 var(--range-progress, 0%), #4b5563 100%);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0 0 4px rgba(16, 185, 129, 0.6);
+}
+
+/* 인터랙션 애니메이션 효과 */
+@keyframes pulse-dark {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.dark .animate-pulse-dark {
+  animation: pulse-dark 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+} 

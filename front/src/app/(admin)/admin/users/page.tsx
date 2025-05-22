@@ -60,12 +60,12 @@ export default function AdminUsersPage() {
   ];
 
   // 상태에 따른 배지 스타일
-  const statusBadgeVariant = (status: string): 'success' | 'warning' | 'destructive' | 'secondary' => {
+  const statusBadgeVariant = (status: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
     switch (status) {
-      case 'active': return 'success';
-      case 'pending': return 'warning';
+      case 'active': return 'default';
+      case 'pending': return 'secondary';
       case 'suspended': return 'destructive';
-      default: return 'secondary';
+      default: return 'outline';
     }
   };
 

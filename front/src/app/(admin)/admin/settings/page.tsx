@@ -205,6 +205,7 @@ export default function AdminSettingsPage() {
                   <Switch
                     checked={emailNotifications}
                     onCheckedChange={setEmailNotifications}
+                    color="green"
                   />
                 </div>
                 
@@ -215,7 +216,7 @@ export default function AdminSettingsPage() {
                       새 사용자 등록 시 알림을 받습니다
                     </p>
                   </div>
-                  <Switch defaultChecked />
+                  <Switch defaultChecked color="green" />
                 </div>
                 
                 <div className="flex justify-between items-center">
@@ -225,7 +226,7 @@ export default function AdminSettingsPage() {
                       새 데이터셋 업로드 시 알림을 받습니다
                     </p>
                   </div>
-                  <Switch defaultChecked />
+                  <Switch defaultChecked color="green" />
                 </div>
                 
                 <div className="flex justify-between items-center">
@@ -235,7 +236,7 @@ export default function AdminSettingsPage() {
                       시스템 오류 또는 경고 발생 시 알림을 받습니다
                     </p>
                   </div>
-                  <Switch defaultChecked />
+                  <Switch defaultChecked color="red" />
                 </div>
               </div>
               

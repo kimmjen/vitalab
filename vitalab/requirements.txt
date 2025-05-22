@@ -1,0 +1,9 @@
+vitaldb
+matplotlib
+pandas
+numpy
+scipy
+jupyterlab
+seaborn
+scikit-learn
+ipywidgets 

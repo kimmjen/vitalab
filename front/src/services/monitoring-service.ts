@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+console.log('Using API URL:', API_BASE_URL);
 
 export interface VRDevice {
   id: number;
@@ -52,42 +53,92 @@ export interface MonitoringSummary {
 }
 
 class MonitoringService {
+  private useMockData = true; // 테스트를 위해 항상 true로 설정
+
   async getDevices(): Promise<VRDevice[]> {
+    if (this.useMockData) {
+      console.log('Using mock devices data for development');
+      return this.getMockDevices();
+    }
+    
     try {
-      const response = await axios.get(`${API_BASE_URL}/monitoring/devices`);
+      console.log('Fetching devices from API:', `${API_BASE_URL}/monitoring/devices`);
+      const response = await axios.get(`${API_BASE_URL}/monitoring/devices`, {
+        timeout: 5000 // 5초 타임아웃 설정
+      });
       return response.data;
     } catch (error) {
       console.error('Error fetching devices:', error);
-      // Fallback to mock data if API is not available
+      console.log('Falling back to mock devices data');
       return this.getMockDevices();
     }
   }
 
   async getPatients(): Promise<PatientData[]> {
+    if (this.useMockData) {
+      console.log('Using mock patients data for development');
+      return this.getMockPatients();
+    }
+    
     try {
-      const response = await axios.get(`${API_BASE_URL}/monitoring/patients`);
+      console.log('Fetching patients from API:', `${API_BASE_URL}/monitoring/patients`);
+      const response = await axios.get(`${API_BASE_URL}/monitoring/patients`, {
+        timeout: 5000
+      });
       return response.data;
     } catch (error) {
       console.error('Error fetching patients:', error);
-      // Fallback to mock data if API is not available
+      console.log('Falling back to mock patients data');
       return this.getMockPatients();
     }
   }
 
   async getMonitoringSummary(): Promise<MonitoringSummary> {
+    if (this.useMockData) {
+      console.log('Using mock summary data for development');
+      return this.getMockSummary();
+    }
+    
     try {
-      const response = await axios.get(`${API_BASE_URL}/monitoring/summary`);
+      console.log('Fetching monitoring summary from API:', `${API_BASE_URL}/monitoring/summary`);
+      const response = await axios.get(`${API_BASE_URL}/monitoring/summary`, {
+        timeout: 5000
+      });
       return response.data;
     } catch (error) {
       console.error('Error fetching monitoring summary:', error);
-      // Fallback to mock data if API is not available
+      console.log('Falling back to mock summary data');
       return this.getMockSummary();
     }
   }
 
   async registerDevice(deviceDetails: { name: string; group: string; code: string }): Promise<VRDevice> {
+    if (this.useMockData) {
+      console.log('Using mock device registration for development');
+      // 모의 등록 응답 생성
+      return {
+        id: Math.floor(Math.random() * 1000) + 5,
+        name: deviceDetails.name,
+        code: deviceDetails.code,
+        group: deviceDetails.group,
+        status: 'offline',
+        patients: 0,
+        lastActive: 'Never',
+        ip: '192.168.1.' + (Math.floor(Math.random() * 254) + 1),
+        version: 'v2.4.1',
+        storage: '0%',
+        cpu: '0%',
+        memory: '0.5GB/4GB',
+        uptime: '0',
+        location: 'Unassigned'
+      };
+    }
+    
     try {
-      const response = await axios.post(`${API_BASE_URL}/monitoring/devices`, deviceDetails);
+      console.log('Registering device with API:', deviceDetails);
+      const response = await axios.post(`${API_BASE_URL}/monitoring/devices`, deviceDetails, {
+        timeout: 5000
+      });
       return response.data;
     } catch (error) {
       console.error('Error registering device:', error);

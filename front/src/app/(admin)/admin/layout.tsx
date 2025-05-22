@@ -17,7 +17,9 @@ import {
   Moon,
   Sun,
   Bell,
-  Search
+  Search,
+  Brackets,
+  Building
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -46,6 +48,7 @@ export default function AdminLayout({
     if (pathname === '/admin/reports') return '보고서';
     if (pathname === '/admin/alerts') return '알림';
     if (pathname === '/admin/settings') return '설정';
+    if (pathname === '/admin/partners') return '파트너 관리';
     return '관리자 페이지';
   }, [pathname]);
 
@@ -94,7 +97,7 @@ export default function AdminLayout({
 
   // 메뉴 항목
   const navigation = [
-    { name: t('admin.dashboard') || '대시보드', href: '/admin', icon: LayoutDashboard },
+    { name: t('admin.dashboard') || '대시보드', href: '/admin', icon: Brackets },
     { 
       name: t('admin.users') || '사용자 관리', 
       href: '/admin/users', 
@@ -106,6 +109,7 @@ export default function AdminLayout({
     },
     { name: t('admin.datasets') || '데이터셋 관리', href: '/admin/datasets', icon: Database },
     { name: t('admin.content') || '콘텐츠 관리', href: '/admin/content', icon: FileText },
+    { name: t('admin.partners') || '파트너 관리', href: '/admin/partners', icon: Building },
     { 
       name: t('admin.reports') || '보고서', 
       href: '/admin/reports', 

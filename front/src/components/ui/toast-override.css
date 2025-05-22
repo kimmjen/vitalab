@@ -1,0 +1,152 @@
+/* 토스트 알림 스타일 재정의 */
+/* Radix UI Toast 컴포넌트 및 요소 타겟팅 */
+[data-radix-toast-root],
+[role="status"][data-state="open"],
+[role="alert"][data-state="open"] {
+  background-color: white !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+  opacity: 1 !important;
+}
+
+/* 토스트 내부의 모든 요소가 불투명하고 배경색을 가지도록 보장 */
+[data-radix-toast-root] > div,
+[role="status"][data-state="open"] > div,
+[role="alert"][data-state="open"] > div {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+/* 그리드 컨테이너 (토스트 내용 영역) */
+[data-radix-toast-root] .grid,
+[role="status"] .grid,
+[role="alert"] .grid {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+/* 다크 모드 */
+.dark [data-radix-toast-root],
+.dark [role="status"][data-state="open"],
+.dark [role="alert"][data-state="open"] {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.dark [data-radix-toast-root] > div,
+.dark [role="status"][data-state="open"] > div,
+.dark [role="alert"][data-state="open"] > div,
+.dark [data-radix-toast-root] .grid,
+.dark [role="status"] .grid,
+.dark [role="alert"] .grid {
+  background-color: #1e293b !important;
+}
+
+/* 토스트 제목 스타일 */
+[role="status"] h2,
+[role="alert"] h2 {
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.25rem !important;
+  opacity: 1 !important;
+  background-color: inherit !important;
+}
+
+/* 토스트 설명 스타일 */
+[role="status"] p,
+[role="alert"] p {
+  color: #64748b !important;
+  font-size: 0.85rem !important;
+  opacity: 1 !important;
+  background-color: inherit !important;
+}
+
+.dark [role="status"] p,
+.dark [role="alert"] p {
+  color: #94a3b8 !important;
+}
+
+/* 토스트 컨테이너 위치 조정 */
+[data-radix-toast-viewport] {
+  right: 1rem !important;
+  top: 1.5rem !important;
+}
+
+/* 토스트 버튼 스타일 */
+[role="status"] button,
+[role="alert"] button {
+  color: #0ea5e9 !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  background-color: transparent !important;
+}
+
+.dark [role="status"] button,
+.dark [role="alert"] button {
+  color: #38bdf8 !important;
+}
+
+/* 성공 토스트 스타일 */
+[role="status"][data-variant="success"],
+[role="alert"][data-variant="success"] {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+}
+
+[role="status"][data-variant="success"] > div,
+[role="alert"][data-variant="success"] > div,
+[role="status"][data-variant="success"] .grid,
+[role="alert"][data-variant="success"] .grid {
+  background-color: #ecfdf5 !important;
+}
+
+.dark [role="status"][data-variant="success"],
+.dark [role="alert"][data-variant="success"] {
+  background-color: #064e3b !important;
+  border-color: #065f46 !important;
+}
+
+.dark [role="status"][data-variant="success"] > div,
+.dark [role="alert"][data-variant="success"] > div,
+.dark [role="status"][data-variant="success"] .grid,
+.dark [role="alert"][data-variant="success"] .grid {
+  background-color: #064e3b !important;
+}
+
+/* 신호 목록 스크롤바 스타일 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 116, 139, 0.5);
+}
+
+/* 다크 모드 스크롤바 스타일 */
+.dark .custom-scrollbar {
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.3);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.5);
+} 

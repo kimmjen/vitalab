@@ -5,12 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { InfoIcon, Play, LineChart, ChartBar, Filter, Download, ArrowRightIcon } from "lucide-react";
+import { InfoIcon, Play, LineChart, ChartBar, Filter, Download, ArrowRightIcon, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function DataViewerDocPage() {
+    const { t } = useTranslation();
     const fadeIn = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -25,9 +27,9 @@ export default function DataViewerDocPage() {
                 transition={{ duration: 0.5 }}
             >
                 <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">Interactive</Badge>
-                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">Visualization</Badge>
-                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">Data Analysis</Badge>
+                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">{t('docs.dataViewer.interactive')}</Badge>
+                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">{t('docs.dataViewer.visualization')}</Badge>
+                    <Badge variant="outline" className="text-emerald-500 border-emerald-200">{t('docs.dataViewer.dataAnalysis')}</Badge>
                 </div>
                 <h1 className="text-4xl font-bold tracking-tight mb-2">VitalDB Data Viewer</h1>
                 <p className="text-xl text-muted-foreground">
@@ -559,6 +561,33 @@ export default function DataViewerDocPage() {
                     Next: VitalDB Python Library
                     <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </Link>
+            </div>
+
+            <div className="mt-10 bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h2 className="text-xl font-semibold mb-4">더 알아보기</h2>
+                <p className="mb-6">
+                    VitalDB 데이터 뷰어에 대한 더 자세한 정보와 튜토리얼을 확인하려면 다음 리소스를 활용하세요:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <Link href="/viewer/demo" className="block bg-white dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-600 transition-colors">
+                        <div className="flex items-center">
+                            <Play className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
+                            <div>
+                                <h3 className="font-medium">인터랙티브 데모</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">데이터 뷰어의 기능을 직접 체험해보세요</p>
+                            </div>
+                        </div>
+                    </Link>
+                    <a href="https://github.com/vitaldb/vitaldb" target="_blank" rel="noopener noreferrer" className="block bg-white dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-600 transition-colors">
+                        <div className="flex items-center">
+                            <ExternalLink className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3" />
+                            <div>
+                                <h3 className="font-medium">GitHub 저장소</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">소스 코드 및 기여 방법 알아보기</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     );

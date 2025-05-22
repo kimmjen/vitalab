@@ -9,6 +9,7 @@ import { useLanguage } from '@/components/providers/LanguageProvider';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { QuickSettings } from '@/components/common/QuickSettings';
 
 export function Header() {
     const { t } = useLanguage();
@@ -60,7 +61,9 @@ export function Header() {
     const menuItems = [
         [t('common.vitalRecorder') || 'VitalRecorder', '/vitalrecorder'],
         [t('common.webMonitoring') || 'Web Monitoring', '/web-monitoring'],
+        // [t('common.vitalSigns') || 'Vital Signs', '/vital-sign'],
         [t('common.openDataset') || 'Open Dataset', '/open-dataset'],
+        [t('common.dataList') || 'Data List', '/data-list'],
         [t('common.docs') || 'Docs', '/docs'],
         [t('common.forum') || 'Forum', '/forum'],
         [t('common.login') || 'Login', '/login'],
@@ -134,6 +137,9 @@ export function Header() {
 
                         {/* 테마 토글 */}
                         <ThemeToggle />
+                        
+                        {/* 빠른 설정 */}
+                        <QuickSettings />
                     </div>
 
                     {/* 모바일 메뉴 버튼 (lg 미만 화면에서만 표시) */}
@@ -143,6 +149,7 @@ export function Header() {
                                 <LanguageSelector />
                             </div>
                             <ThemeToggle />
+                            <QuickSettings />
                         </div>
                         <button
                             onClick={toggleMobileMenu}

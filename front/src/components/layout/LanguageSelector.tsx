@@ -2,15 +2,18 @@
 
 import React from 'react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { useTranslation } from '@/hooks/useTranslation';
 import { cn } from '@/lib/utils';
 
 const LanguageSelector: React.FC = () => {
     const { language, setLanguage } = useLanguage();
+    const { changeLanguage } = useTranslation();
 
-    // 언어 변경 함수
+    // 언어 변경 함수 - 양쪽 훅에 모두 적용
     const toggleLanguage = () => {
         const newLanguage = language === 'en' ? 'ko' : 'en';
         setLanguage(newLanguage);
+        changeLanguage(newLanguage); // useTranslation 훅에도 언어 변경 적용
     };
 
     return (

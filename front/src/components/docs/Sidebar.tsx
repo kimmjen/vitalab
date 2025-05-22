@@ -49,6 +49,9 @@ const docCategories: { title: string; items: NavItem[] }[] = [
         title: "Open Dataset",
         items: [
             { title: "VitalDB Overview", href: "/docs/open-dataset/overview" },
+            { title: "Data Viewer", href: "/docs/open-dataset/data-viewer" },
+            { title: "Web API", href: "/docs/open-dataset/web-api" },
+            { title: "Python Library", href: "/docs/open-dataset/python-library" },
         ],
     },
     {

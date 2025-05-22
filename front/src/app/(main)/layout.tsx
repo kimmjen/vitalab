@@ -31,6 +31,8 @@ export default function MainLayout({
             title = 'VitalLab - 포럼';
         } else if (pathname.startsWith('/docs')) {
             title = 'VitalLab - 문서';
+        } else if (pathname.startsWith('/data-list')) {
+            title = 'VitalLab - 데이터 목록';
         }
         
         document.title = title;

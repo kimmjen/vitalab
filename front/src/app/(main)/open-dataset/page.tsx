@@ -153,7 +153,7 @@ export default function OpenDatasetPage() {
                     {/* Overview Card */}
                     <motion.div variants={itemVariant} className="lg:col-span-2">
                         <Card className={cardClasses}>
-                            <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-tl from-blue-100 to-blue-50 dark:from-blue-900/20 dark:to-blue-800/10 rounded-bl-xl z-0"></div>
+                            {/* <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-tl from-blue-100 to-blue-50 dark:from-blue-900/20 dark:to-blue-800/10 rounded-bl-xl z-0"></div> */}
                             <CardContent className={cardContentClasses}>
                                 <Database className={iconClasses} />
                                 <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Dataset Overview</h2>
@@ -212,7 +212,7 @@ export default function OpenDatasetPage() {
                     {/* Data Viewer Card */}
                     <motion.div variants={itemVariant} className="lg:col-span-2">
                         <Card className={cardClasses}>
-                            <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-indigo-100 to-indigo-50 dark:from-indigo-900/20 dark:to-indigo-800/10 rounded-tr-xl z-0"></div>
+                            {/* <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-indigo-100 to-indigo-50 dark:from-indigo-900/20 dark:to-indigo-800/10 rounded-tr-xl z-0"></div> */}
                             <CardContent className={cardContentClasses}>
                                 <LineChart className={iconClasses} />
                                 <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Interactive Data Viewer</h2>

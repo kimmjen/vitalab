@@ -20,7 +20,7 @@ export default function HeroBanner() {
             <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
             
             <div className="relative z-10">
-                <Badge variant="info" className="mb-6">Open Database</Badge>
+                <Badge variant="default" className="mb-6">Open Database</Badge>
                 <h1 className="font-bold text-3xl md:text-4xl m-0 mb-4">
                     VitalDB Open Dataset
                 </h1>
@@ -40,7 +40,7 @@ export default function HeroBanner() {
                     <Button 
                         variant="outline" 
                         size="lg" 
-                        className="border-white text-white hover:bg-white/10"
+                        className="bg-transparent border-white text-white hover:bg-white/10"
                     >
                         <FileText className="mr-2 h-4 w-4" />
                         Read Documentation

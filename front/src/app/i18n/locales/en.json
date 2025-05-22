@@ -1,0 +1,8 @@
+{
+  "common": {
+    "vitalRecorder": "VitalRecorder",
+    "webMonitoring": "Web Monitoring",
+    "vitalSigns": "Vital Signs",
+    "openDataset": "Open Dataset"
+  }
+} 

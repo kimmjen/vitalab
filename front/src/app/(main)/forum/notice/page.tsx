@@ -1,13 +1,42 @@
 // src/app/forum/notice/page.tsx
 'use client';
 
+import { Suspense } from "react";
+import { Card } from "@/components/ui/card";
+import { TabsContent } from "@/components/ui/tabs";
+
+// 메인 페이지 컴포넌트
+export default function NoticePage() {
+  return (
+    <TabsContent value="notice">
+      <Suspense fallback={<LoadingState />}>
+        <NoticeContent />
+      </Suspense>
+    </TabsContent>
+  );
+}
+
+// 로딩 상태 컴포넌트
+function LoadingState() {
+  return (
+    <Card className="p-8">
+      <div className="flex items-center justify-center min-h-[40vh]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-500 dark:text-gray-400">공지사항을 불러오는 중입니다...</p>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+// useSearchParams를 사용하는 메인 컨텐츠 컴포넌트
 import { useEffect, useState, FormEvent } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Bell, Calendar, User, Pin, EyeIcon, ChevronLeft, ChevronRight, ZoomIn, X, MessageSquare, Send } from "lucide-react";
-import { TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Notice, Comment, getAllNotices, getNoticeById, getCategoryName, getCommentsByNoticeId, addComment } from "@/lib/notices";
 import Link from "next/link";
@@ -22,7 +51,7 @@ import { ko } from 'date-fns/locale';
 // 한 페이지에 표시할 공지사항 수
 const ITEMS_PER_PAGE = 5;
 
-export default function NoticePage() {
+function NoticeContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const { toast } = useToast();
@@ -319,180 +348,178 @@ export default function NoticePage() {
     };
 
     return (
-        <TabsContent value="notice">
-            <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6 p-3 sm:p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-800/30">
-                    <div className="bg-red-100 text-red-800 p-2 rounded-full dark:bg-red-800 dark:text-red-200 flex-shrink-0">
-                        <Bell size={18} />
-                    </div>
-                    <div>
-                        <h2 className="font-medium text-base sm:text-lg mb-1">공지사항</h2>
-                        <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">VitalDB 및 관련 서비스에 대한 중요 공지사항입니다.</p>
-                    </div>
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6 p-3 sm:p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-800/30">
+                <div className="bg-red-100 text-red-800 p-2 rounded-full dark:bg-red-800 dark:text-red-200 flex-shrink-0">
+                    <Bell size={18} />
                 </div>
+                <div>
+                    <h2 className="font-medium text-base sm:text-lg mb-1">공지사항</h2>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">VitalDB 및 관련 서비스에 대한 중요 공지사항입니다.</p>
+                </div>
+            </div>
 
-                {isLoading ? (
-                    <div className="flex justify-center items-center p-12">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-300"></div>
-                    </div>
-                ) : selectedNotice ? (
-                    // 공지사항 상세 보기
-                    <div className="space-y-10">
-                        <Card>
-                            <CardHeader>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Badge variant="outline">{getCategoryName(selectedNotice.category)}</Badge>
-                                    {selectedNotice.pinned && (
-                                        <Badge variant="secondary">
-                                            <Pin className="h-3 w-3 mr-1" /> 공지
-                                        </Badge>
-                                    )}
-                                </div>
-                                <CardTitle className="text-2xl">{selectedNotice.title}</CardTitle>
-                                <CardDescription>
-                                    <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground">
-                                        <div className="flex items-center">
-                                            <User className="h-4 w-4 mr-1" />
-                                            {selectedNotice.author}
-                                        </div>
-                                        <div className="flex items-center">
-                                            <Calendar className="h-4 w-4 mr-1" />
-                                            {selectedNotice.createdAt}
-                                        </div>
-                                        <div className="flex items-center">
-                                            <MessageSquare className="h-4 w-4 mr-1" />
-                                            댓글 {comments.length}
-                                        </div>
+            {isLoading ? (
+                <div className="flex justify-center items-center p-12">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-300"></div>
+                </div>
+            ) : selectedNotice ? (
+                // 공지사항 상세 보기
+                <div className="space-y-10">
+                    <Card>
+                        <CardHeader>
+                            <div className="flex items-center gap-2 mb-2">
+                                <Badge variant="outline">{getCategoryName(selectedNotice.category)}</Badge>
+                                {selectedNotice.pinned && (
+                                    <Badge variant="secondary">
+                                        <Pin className="h-3 w-3 mr-1" /> 공지
+                                    </Badge>
+                                )}
+                            </div>
+                            <CardTitle className="text-2xl">{selectedNotice.title}</CardTitle>
+                            <CardDescription>
+                                <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground">
+                                    <div className="flex items-center">
+                                        <User className="h-4 w-4 mr-1" />
+                                        {selectedNotice.author}
                                     </div>
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="prose dark:prose-invert max-w-none">
-                                    {selectedNotice.content.split('\n').map((paragraph, idx) => (
-                                        <p key={idx}>{paragraph}</p>
-                                    ))}
+                                    <div className="flex items-center">
+                                        <Calendar className="h-4 w-4 mr-1" />
+                                        {selectedNotice.createdAt}
+                                    </div>
+                                    <div className="flex items-center">
+                                        <MessageSquare className="h-4 w-4 mr-1" />
+                                        댓글 {comments.length}
+                                    </div>
                                 </div>
-                                
-                                {/* 이미지 갤러리 */}
-                                <ImageGallery images={selectedNotice.images} />
-                            </CardContent>
-                        </Card>
-                        
-                        {/* 댓글 섹션 */}
-                        <CommentSection />
-                        
-                        {/* 다른 공지사항 목록 - 현재 보고 있는 공지사항을 제외 */}
-                        <div className="mt-12">
-                            <h3 className="text-xl font-semibold mb-4">다른 공지사항</h3>
-                            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                                {notices
-                                    .filter(notice => notice.id !== selectedNotice.id)
-                                    .slice(0, 6) // 최대 6개만 표시
-                                    .map((notice) => (
-                                        <Link href={`/forum/notice?id=${notice.id}`} key={notice.id}>
-                                            <Card className="h-full hover:bg-slate-50 dark:hover:bg-slate-900/20 transition-colors">
-                                                <CardHeader className="pb-2">
-                                                    <div className="flex justify-between items-start">
-                                                        <Badge variant="outline">{getCategoryName(notice.category)}</Badge>
-                                                        <div className="text-sm text-muted-foreground">
-                                                            {notice.createdAt}
-                                                        </div>
-                                                    </div>
-                                                    <CardTitle className="text-lg mt-2 line-clamp-1">{notice.title}</CardTitle>
-                                                </CardHeader>
-                                                <CardContent className="pb-2">
-                                                    <CardDescription className="line-clamp-2">
-                                                        {notice.content}
-                                                    </CardDescription>
-                                                </CardContent>
-                                                <CardFooter>
-                                                    <div className="flex justify-between w-full">
-                                                        <div className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center">
-                                                            <EyeIcon className="h-3 w-3 mr-1" /> 상세보기
-                                                        </div>
-                                                        {notice.commentCount && notice.commentCount > 0 && (
-                                                            <div className="text-sm text-muted-foreground flex items-center">
-                                                                <MessageSquare className="h-3 w-3 mr-1" /> {notice.commentCount}
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                </CardFooter>
-                                            </Card>
-                                        </Link>
-                                    ))}
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose dark:prose-invert max-w-none">
+                                {selectedNotice.content.split('\n').map((paragraph, idx) => (
+                                    <p key={idx}>{paragraph}</p>
+                                ))}
                             </div>
                             
-                            {/* 모든 공지사항 보기 버튼 */}
-                            <div className="flex justify-center mt-6">
-                                <Link href="/forum/notice">
-                                    <Button variant="outline">모든 공지사항 보기</Button>
-                                </Link>
-                            </div>
+                            {/* 이미지 갤러리 */}
+                            <ImageGallery images={selectedNotice.images} />
+                        </CardContent>
+                    </Card>
+                    
+                    {/* 댓글 섹션 */}
+                    <CommentSection />
+                    
+                    {/* 다른 공지사항 목록 - 현재 보고 있는 공지사항을 제외 */}
+                    <div className="mt-12">
+                        <h3 className="text-xl font-semibold mb-4">다른 공지사항</h3>
+                        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                            {notices
+                                .filter(notice => notice.id !== selectedNotice.id)
+                                .slice(0, 6) // 최대 6개만 표시
+                                .map((notice) => (
+                                    <Link href={`/forum/notice?id=${notice.id}`} key={notice.id}>
+                                        <Card className="h-full hover:bg-slate-50 dark:hover:bg-slate-900/20 transition-colors">
+                                            <CardHeader className="pb-2">
+                                                <div className="flex justify-between items-start">
+                                                    <Badge variant="outline">{getCategoryName(notice.category)}</Badge>
+                                                    <div className="text-sm text-muted-foreground">
+                                                        {notice.createdAt}
+                                                    </div>
+                                                </div>
+                                                <CardTitle className="text-lg mt-2 line-clamp-1">{notice.title}</CardTitle>
+                                            </CardHeader>
+                                            <CardContent className="pb-2">
+                                                <CardDescription className="line-clamp-2">
+                                                    {notice.content}
+                                                </CardDescription>
+                                            </CardContent>
+                                            <CardFooter>
+                                                <div className="flex justify-between w-full">
+                                                    <div className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center">
+                                                        <EyeIcon className="h-3 w-3 mr-1" /> 상세보기
+                                                    </div>
+                                                    {notice.commentCount && notice.commentCount > 0 && (
+                                                        <div className="text-sm text-muted-foreground flex items-center">
+                                                            <MessageSquare className="h-3 w-3 mr-1" /> {notice.commentCount}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </CardFooter>
+                                        </Card>
+                                    </Link>
+                                ))}
+                        </div>
+                        
+                        {/* 모든 공지사항 보기 버튼 */}
+                        <div className="flex justify-center mt-6">
+                            <Link href="/forum/notice">
+                                <Button variant="outline">모든 공지사항 보기</Button>
+                            </Link>
                         </div>
                     </div>
-                ) : (
-                    // 공지사항 목록
-                    <div className="space-y-5">
-                        {notices.length > 0 ? getCurrentPageItems().map((notice) => (
-                            <Link href={`/forum/notice?id=${notice.id}`} key={notice.id}>
-                                <Card className="hover:bg-slate-50 dark:hover:bg-slate-900/20 transition-colors">
-                                    <CardHeader className="pb-2">
-                                        <div className="flex justify-between items-start">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <Badge variant="outline">{getCategoryName(notice.category)}</Badge>
-                                                {notice.pinned && (
-                                                    <Badge variant="secondary">
-                                                        <Pin className="h-3 w-3 mr-1" /> 공지
-                                                    </Badge>
-                                                )}
-                                                {notice.images.length > 0 && (
-                                                    <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300">
-                                                        이미지 {notice.images.length}
-                                                    </Badge>
-                                                )}
-                                            </div>
-                                            <div className="text-sm text-muted-foreground">
-                                                {notice.createdAt}
-                                            </div>
-                                        </div>
-                                        <CardTitle className="text-xl">{notice.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription>
-                                            {notice.content.length > 150 
-                                                ? notice.content.slice(0, 150) + '...' 
-                                                : notice.content}
-                                        </CardDescription>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <div className="text-sm text-muted-foreground flex items-center">
-                                                <User className="h-4 w-4 mr-1" />
-                                                {notice.author}
-                                            </div>
-                                            {notice.commentCount && notice.commentCount > 0 && (
-                                                <div className="text-sm text-muted-foreground flex items-center">
-                                                    <MessageSquare className="h-4 w-4 mr-1" />
-                                                    댓글 {notice.commentCount}
-                                                </div>
+                </div>
+            ) : (
+                // 공지사항 목록
+                <div className="space-y-5">
+                    {notices.length > 0 ? getCurrentPageItems().map((notice) => (
+                        <Link href={`/forum/notice?id=${notice.id}`} key={notice.id}>
+                            <Card className="hover:bg-slate-50 dark:hover:bg-slate-900/20 transition-colors">
+                                <CardHeader className="pb-2">
+                                    <div className="flex justify-between items-start">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <Badge variant="outline">{getCategoryName(notice.category)}</Badge>
+                                            {notice.pinned && (
+                                                <Badge variant="secondary">
+                                                    <Pin className="h-3 w-3 mr-1" /> 공지
+                                                </Badge>
+                                            )}
+                                            {notice.images.length > 0 && (
+                                                <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300">
+                                                    이미지 {notice.images.length}
+                                                </Badge>
                                             )}
                                         </div>
-                                    </CardContent>
-                                </Card>
-                            </Link>
-                        )) : (
-                            <div className="text-center py-12">
-                                <p className="text-muted-foreground">등록된 공지사항이 없습니다.</p>
-                            </div>
-                        )}
-                        
-                        {/* 페이지네이션 */}
-                        {notices.length > 0 && <Pagination />}
-                    </div>
-                )}
-            </motion.div>
+                                        <div className="text-sm text-muted-foreground">
+                                            {notice.createdAt}
+                                        </div>
+                                    </div>
+                                    <CardTitle className="text-xl">{notice.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <CardDescription>
+                                        {notice.content.length > 150 
+                                            ? notice.content.slice(0, 150) + '...' 
+                                            : notice.content}
+                                    </CardDescription>
+                                    <div className="flex justify-between items-center mt-4">
+                                        <div className="text-sm text-muted-foreground flex items-center">
+                                            <User className="h-4 w-4 mr-1" />
+                                            {notice.author}
+                                        </div>
+                                        {notice.commentCount && notice.commentCount > 0 && (
+                                            <div className="text-sm text-muted-foreground flex items-center">
+                                                <MessageSquare className="h-4 w-4 mr-1" />
+                                                댓글 {notice.commentCount}
+                                            </div>
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                    )) : (
+                        <div className="text-center py-12">
+                            <p className="text-muted-foreground">등록된 공지사항이 없습니다.</p>
+                        </div>
+                    )}
+                    
+                    {/* 페이지네이션 */}
+                    {notices.length > 0 && <Pagination />}
+                </div>
+            )}
 
             {/* 이미지 확대 모달 */}
             <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
@@ -520,6 +547,6 @@ export default function NoticePage() {
                     )}
                 </DialogContent>
             </Dialog>
-        </TabsContent>
+        </motion.div>
     );
 }
